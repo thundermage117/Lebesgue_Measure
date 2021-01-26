@@ -1,0 +1,163 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{\textbf{Lebesgue Measure}}
+\author{Abhinav Siddharth}
+\date{January 2021}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\begin{center}
+    {\Large\bfseries\noindent Acknowledgement}
+\end{center}
+
+
+add acknowledgement here
+
+\newpage
+
+\begin{center}
+    {\Large\bfseries\noindent Abstract}
+\end{center}
+
+add abstract here
+\newpage
+
+\begin{center}
+    {\Large\bfseries\noindent Contents}
+\end{center}
+
+\newpage
+
+\section{Introduction}
+The goal of this project is to investigate the Lebesgue measure and some of its applications in probability measure. 
+
+\subsection{Measure}
+
+How do we measure a set or an object? If we have a 3-dimensional object, we could find its volume in 2 different ways, we could fill the container with simple objects or $boxes$ and find their sum, or we could encase the whole container in a box and start chipping away smaller boxes. These approaches work only when our box measure is a properly defined measure. 
+
+The mathematical concept of measure is a generalisation of length in $R$, area in $R^2$ or volume in $R^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $R^n$ we are using and $E \subset R^n$.
+
+We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $R^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant). Here, we hit a roadblock in our definition of a measure:
+$$(0,1)= \bigcup_{x \in (0,1)} \{x\} \, and \, 1 \neq \sum_{(0,1)}0$$
+
+We can also see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B and have the same cardinality, but B is twice as long as A.
+ 
+ Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, mostly because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $R^n$ applying all the above properties. 
+ 
+ If we are developing a measure $m$ defined on the subsets of R, we hope that these conditions are met:
+ \begin{enumerate}
+     \item $m(A)$ is defined for every set A of the real numbers;
+     \item $0\leq m(A) \leq \infty$;
+     \item $m(A) \leq m(B)$ provided $A \subset B$;
+     \item $m(\phi) =0 $;
+     \item $m(\{a\})=0$ (points are dimensionless);
+     \item $m(I)=l(I)$, I is an interval (the measure on an interval should be its length)
+     \item $m(A)=m(x+A)$, translation invariance, (location doesn't affect the length, so it shouldn't affect measure)
+     \item $m(\bigcup_{1}^{\infty} {A_k}) = \sum_{1}^{\infty}m(A_k)$, for any mutually disjoint sequence $(A_k)$ of subsets of real numbers (countable additivity).
+ \end{enumerate}
+ Our goal is to construct a measure that satisfies as many conditions as possible.
+ 
+ \subsubsection{Length of Intervals}
+ 
+ The length of an interval I with end points $a\leq b$, $a,b \in R$, is defined as:
+ $$l(I) = b-a$$
+ For example, $l((0,1])=l([0,1])=1$ and $l((1,\infty))=\infty$.
+ 
+ We immediately conclude that, if $I_1$ and $I_2$ are two intervals with $I_1 \subset I_2$, $l(I1) \leq l(I2)$.
+ 
+ \subsubsection{Cover}
+ 
+ A collection $\{G_{\alpha}\}$ of open sets covers a set A if $A \subset \bigcup G_{\alpha}$. And the collection $\{G_{\alpha}\}$ is called the cover.
+ 
+ \subsubsection{Subcover}
+ 
+ Let C be a cover of a topological space X. A subcover of C is a subset of C that still covers X.
+ 
+ \subsubsection{Compact Set}
+ 
+A set of real numbers is compact if every open cover of the set contains a finite subcover.
+
+\subsubsection{Heine-Borel Theorem}
+A set of real numbers is compact iff it is closed and bounded.
+
+\subsubsection{}
+If $I,I_1,I_2,\dots ,I_n$ are bounded open intervals with 
+
+$$ I \subset \bigcup_{1}^{n}I_k ,\; then  \;l(I) \leq \sum l(I_k)$$
+
+The length of an interval can not exceed the length of a $finite$ cover.
+
+\subsubsection{Proposition}
+
+If $I,I_1,I_2,\dots ,I_n$ are bounded open intervals with $ I \subset \bigcup I_k$, then $l(I) \leq \sum l(I_k)$. Also, $ l(I) \leq inf\{ \sum l(I_k) | I \subset \bigcup I_k, I_k \; bounded \; intervals \}$.
+
+Proof: Assume $I =(a,b)$ and let $\epsilon > 0$. The intervals $(a-\epsilon,a+\epsilon),(b+\epsilon,b-\epsilon),I_1,\dots ,I_n$ form an open cover of the compact set $[a,b]$. And by Heine-Borel Theorem, a finite sub collection will cover [a,b] and thus (a,b).
+Using 1.1.6:
+$$  l(I) \leq 4\epsilon +  \sum l(I_k)$$
+
+As this holds for any $\epsilon$, $l(I) \leq \sum l(I_k)$, the proof is complete.
+
+\subsection{Lebesgue Outer Measure}
+
+We have seen that every set of real numbers can be covered with a countable collection of open intervals.
+
+\subsubsection{Definition}
+
+A is any subset of R. Form the collection of all countable covers of A by open intervals. The Lebesgue outer measure of A, $m^*(A)$, is given by
+$$m^*(A)= inf{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \, , \; I_k \; open \; intervals}$$
+
+\subsubsection{Results}
+\begin{enumerate}
+    \item $m^*$ is a set function, whose domain is all subsets of R, and range is $[0,\infty]$, the non-negative extended real numbers. Note that the Lebesgue Outer Measure is defined for every subset of R.
+    
+    \item Outer Measure is monotonic, i.e. , if $A \subseteq B$, then $m^*(A) \leq m^*(B)$, any cover of B by open intervals is also a cover of A, and the latter infimum is taken over a larger collection than the former. 
+
+    \item If $(I_k)$ is any countable cover of A by open intervals, since infimum is a lower bound,$$ 0 \leq m^*(A) \leq \sum l(I_k)$$
+    
+
+
+\end{enumerate}
+
+\subsubsection{The outer measure of any interval is it's length.}
+
+Proof:  
+For a closed interval [a,b], let $\epsilon >0$. Then $(a-\epsilon,b+\epsilon)$ covers $[a,b]$ and length of this interval is $b-a+\epsilon$. Since $\epsilon$ is arbitrary $m^*([a,b]) \leq b-a = l([a,b])$.
+
+Next let ${I_n}$ be a covering of [a,b] by bounded open intervals. By the Heine-Borel Theorem, there exists a finite subset A of $I_n$'s covering [a,b]. So $a \in I_1$ for some $I_1 =(a_1,b_1) \in A$. Also, if $b_1 \leq b$, then $b_1 \in I_2 $ for some $I_2 =(a_2,b_2) \in A$. Similarly we can construct $I_1,I_2,\dots,I_k$. Then
+$$ \sum l(I_n) \geq \sum_{i=1}^k l(I_i) = \sum_{i=1}^{k}(b_i - a_i)$$
+$$=(b_k-a_k) +(b_{k-1} -a_{k-1})+ \dots + (b_1 - a_1) $$
+$$ >b_k -a_1$$
+Since $a_1<a$ and $b_k>b$, then $ \sum l(I_n) > b_k -a_1 $. So, $m^*([a,b]) = b-a = l([a,b])$.
+
+If I is an unbounded interval, then given any natural number $n \in N$, there is a closed interval $J \subset I$ with $l(J)=n$. Hence $m^*(I) \geq m^*(J) = l(J)=n$. Since $m^*(I) \geq n and n \in N$ is arbitrary, then $m^*(I)=\infty=l(I)$. 
+
+\subsubsection{Outer Measure is translation invariant}
+$m^*(A)=m^*(A+y)$
+
+Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from sec 1.1.7. $\sum l(I_n) < M+ \epsilon$, so if $y \in R$, then ${I_{n}+y}$ is a covering of A+y and so $m^*(A+y) \leq M$
+
+Now, let ${J_n}$ be a collection of bounded open intervals such that $\cup J_n \supset A+y $.Assume that $\sum l(J_n)< M$. Then ${J_n-y}$ is a covering of A and $\sum l(J_n-y)=\sum l(J_n) < M$, a contradiction. So, $\sum l(J_n) \geq M$ and hence $m^*(A)\geq M$. So $m^*(A)=m^*(A+y)=M$
+
+Suppose $m^*(A)= \infty$.Then for any$\{I_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A \subset \cup I_n$, we must
+have$\sum l(I_n) =\infty$ .Consider A+y. For any $\{J_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A+y \subset \cup J_n$, the collection $\{J_n - y\}_{n=1}^{\infty} $ is a set of bounded open intervals such that $A+y \subset \cup J_n -y$. So $\sum l(J_n - y) =\infty$. But l($J_n$) =l($J_n - y$), so we must have $\sum l(J_n) =\infty$. Since $\{J_n\}_{n=1}^{\infty} $ is an arbitrary collection of bounded open intervals covering A+y, we must have $m^*(A)=m^*(A+y)= \infty$. 
+
+\subsubsection{Outer Measure is countably subadditive}
+
+That is, if $\{E_k\}_{k=1}^{\infty} $ is any countable collection of sets, then
+$$ m^*(\bigcup_{k=1}^{\infty} E_k) \leq \sum_{k=1}^{\infty} m^{*}(E_k)$$
+
+The proof is similar to the ones seen above, solve while taking each condition separately.
+
+\subsubsection{$[0,1]$ is not countable}
+
+As seen in Sec.1.2.3 $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0, (refer to Royden and Fitzpatrick pg.31), therefore $[0,1]$ is not countable.
+
+
+\subsection{$\sigma$-Algebra of Lebesgue Measurable sets}
+
+
+\end{document}
