@@ -40,16 +40,16 @@ The goal of this project is to investigate the Lebesgue measure and some of its 
 
 How do we measure a set or an object? If we have a 3-dimensional object, we could find its volume in 2 different ways, we could fill the container with simple objects or $boxes$ and find their sum, or we could encase the whole container in a box and start chipping away smaller boxes. These approaches work only when our box measure is a properly defined measure. 
 
-The mathematical concept of measure is a generalisation of length in $R$, area in $R^2$ or volume in $R^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $R^n$ we are using and $E \subset R^n$.
+The mathematical concept of measure is a generalisation of length in $\mathbb{R}$, area in $\mathbb{R}^2$ or volume in $\mathbb{R}^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $\mathbb{R}^n$ we are using and $E \subset \mathbb{R}^n$.
 
-We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $R^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant). Here, we hit a roadblock in our definition of a measure:
+We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $\mathbb{R}^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant). Here, we hit a roadblock in our definition of a measure:
 $$(0,1)= \bigcup_{x \in (0,1)} \{x\} \, and \, 1 \neq \sum_{(0,1)}0$$
 
 From our definition, we can also see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A.
  
- Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $R^n$ applying all the above properties. 
+ Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $\mathbb{R}^n$ applying all the above properties. 
  
- If we are developing a measure $m$ defined on the subsets of R, we hope that these conditions are met:
+ If we are developing a measure $m$ defined on the subsets of $\mathbb{R}$, we hope that these conditions are met:
  \begin{enumerate}
      \item $m(A)$ is defined for every set A of the real numbers;
      \item $0\leq m(A) \leq \infty$;
@@ -64,7 +64,7 @@ From our definition, we can also see that two sets having the same number of poi
  
  \subsubsection{Length of Intervals}
  
- The length of an interval I with end points $a\leq b$, $a,b \in R$, is defined as:
+ The length of an interval I with end points $a\leq b$, $a,b \in \mathbb{R}$, is defined as:
  $$l(I) = b-a$$
  For example, $l((0,1])=l([0,1])=1$ and $l((1,\infty))=\infty$.
  
@@ -108,12 +108,12 @@ We have seen that every set of real numbers can be covered with a countable coll
 
 \subsubsection{Definition}
 
-A is any subset of R. Form the collection of all countable covers of A by open intervals. The Lebesgue outer measure of A, $m^*(A)$, is given by
+A is any subset of $\mathbb{R}$. Form the collection of all countable covers of A by open intervals. The Lebesgue outer measure of A, $m^*(A)$, is given by
 $$m^*(A)= inf{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \, , \; I_k \; open \; intervals}$$
 
 \subsubsection{Results}
 \begin{enumerate}
-    \item $m^*$ is a set function, whose domain is all subsets of R, and range is $[0,\infty]$, the non-negative extended real numbers. Note that the Lebesgue Outer Measure is defined for every subset of R.
+    \item $m^*$ is a set function, whose domain is all subsets of $\mathbb{R}$, and range is $[0,\infty]$, the non-negative extended real numbers. Note that the Lebesgue Outer Measure is defined for every subset of $\mathbb{R}$.
     
     \item Outer Measure is monotonic, i.e. , if $A \subseteq B$, then $m^*(A) \leq m^*(B)$, any cover of B by open intervals is also a cover of A, and the latter infimum is taken over a larger collection than the former. 
 
@@ -139,7 +139,7 @@ If I is an unbounded interval, then given any natural number $n \in N$, there is
 \subsubsection{Outer Measure is translation invariant}
 $m^*(A)=m^*(A+y)$
 
-Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from sec 1.1.7. $\sum l(I_n) < M+ \epsilon$, so if $y \in R$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.
+Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from sec 1.1.7. $\sum l(I_n) < M+ \epsilon$, so if $y \in \mathbb{R}$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.
 
 Now, let ${J_n}$ be a collection of bounded open intervals such that $\cup J_n \supset A+y $.Assume that $\sum l(J_n)< M$. Then ${J_n-y}$ is a covering of A and $\sum l(J_n-y)=\sum l(J_n) < M$, a contradiction. So, $\sum l(J_n) \geq M$ and hence $m^*(A)\geq M$. So $m^*(A)=m^*(A+y)=M$
 
@@ -171,7 +171,7 @@ As seen in Sec.1.2.3 $[0,1]$ has an outer measure of 1, whereas all countable se
 
 \subsection{$\sigma$-Algebra of Lebesgue Measurable sets}
 
-Unfortunately the outer measure fails to be countably additive on all subsets of R, it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905. However, we can salvage matters by measuring a certain class of sets in $R$, henceforth called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
+Unfortunately the outer measure fails to be countably additive on all subsets of $\mathbb{R}$, it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905. However, we can salvage matters by measuring a certain class of sets in $\mathbb{R}$, henceforth called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
 
 \subsubsection{Carathedory's Measurability Criteria}
 
