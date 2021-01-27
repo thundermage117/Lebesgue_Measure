@@ -133,12 +133,12 @@ $$=(b_k-a_k) +(b_{k-1} -a_{k-1})+ \dots + (b_1 - a_1) $$
 $$ >b_k -a_1$$
 Since $a_1<a$ and $b_k>b$, then $ \sum l(I_n) > b_k -a_1 $. So, $m^*([a,b]) = b-a = l([a,b])$.
 
-If I is an unbounded interval, then given any natural number $n \in N$, there is a closed interval $J \subset I$ with $l(J)=n$. Hence $m^*(I) \geq m^*(J) = l(J)=n$. Since $m^*(I) \geq n and n \in N$ is arbitrary, then $m^*(I)=\infty=l(I)$. 
+If I is an unbounded interval, then given any natural number $n \in N$, there is a closed interval $J \subset I$ with $l(J)=n$. Hence $m^*(I) \geq m^*(J) = l(J)=n$. Since $m^*(I) \geq n \, and \, n \in N$ is arbitrary, then $m^*(I)=\infty=l(I)$. 
 
 \subsubsection{Outer Measure is translation invariant}
 $m^*(A)=m^*(A+y)$
 
-Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from sec 1.1.7. $\sum l(I_n) < M+ \epsilon$, so if $y \in R$, then ${I_{n}+y}$ is a covering of A+y and so $m^*(A+y) \leq M$
+Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from sec 1.1.7. $\sum l(I_n) < M+ \epsilon$, so if $y \in R$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.
 
 Now, let ${J_n}$ be a collection of bounded open intervals such that $\cup J_n \supset A+y $.Assume that $\sum l(J_n)< M$. Then ${J_n-y}$ is a covering of A and $\sum l(J_n-y)=\sum l(J_n) < M$, a contradiction. So, $\sum l(J_n) \geq M$ and hence $m^*(A)\geq M$. So $m^*(A)=m^*(A+y)=M$
 
@@ -150,7 +150,16 @@ have$\sum l(I_n) =\infty$ .Consider A+y. For any $\{J_n\}_{n=1}^{\infty} $ a set
 That is, if $\{E_k\}_{k=1}^{\infty} $ is any countable collection of sets, then
 $$ m^*(\bigcup_{k=1}^{\infty} E_k) \leq \sum_{k=1}^{\infty} m^{*}(E_k)$$
 
-The proof is similar to the ones seen above, solve while taking each condition separately.
+Proof: If one of the $E_k$'s has infinite outer measure, the inequality holds trivially. We therefore suppose each of the $E_k$'s has finite outer measure. Let $\epsilon > 0$. For each natural number k, there is a countable collection $\{ I_{k,i} \}_{i=1}^{\infty}$ of open bounded intervals for which
+$$ E_k \subseteq \bigcup_{i=1}^{\infty} \{ I_{k,i} \} \; and \; \sum_{i=1}^{\infty} l(I_{k,i}) < m^{*}(E_k) +\frac{\epsilon}{2^k}  $$
+
+Now, $\{I_{k,i}\}_{1 \leq k , i \leq \infty}$ is a countable collection of open, bounded intervals that covers $\cup_{k=1}^{\infty} E_k$: the collection is countable since it is a countable collection of countable collections. Thus,
+
+$$ m^{*}(\bigcup_{k=1}^{\infty} E_k) \leq \sum_{1\leq k,i<\infty } l(I_{k,i})= \sum_{k=1}^{\infty}[\sum_{i=1}^{\infty} l(I_{k,i})]$$
+$$\;\;\;<\sum_{k=1}^{\infty}[m^{*}(E_k) + \frac{\epsilon}{2^k}]$$
+$$  m^{*}(\bigcup_{k=1}^{\infty} E_k) \leq [\sum_{k=1}^{\infty}m^{*}(E_k)]+\epsilon$$
+
+Since this holds for each $\epsilon>0$, it also holds for $\epsilon=0$. The proof is complete.
 
 \subsubsection{$[0,1]$ is not countable}
 
