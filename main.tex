@@ -44,9 +44,9 @@ The mathematical concept of measure is a generalisation of length in $R$, area i
 We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $R^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant). Here, we hit a roadblock in our definition of a measure:
 $$(0,1)= \bigcup_{x \in (0,1)} \{x\} \, and \, 1 \neq \sum_{(0,1)}0$$
 
-We can also see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B and have the same cardinality, but B is twice as long as A.
+From our definition, we can also see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A.
  
- Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, mostly because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $R^n$ applying all the above properties. 
+ Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $R^n$ applying all the above properties. 
  
  If we are developing a measure $m$ defined on the subsets of R, we hope that these conditions are met:
  \begin{enumerate}
