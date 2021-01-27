@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsfonts}
+\usepackage{amssymb}
 
 \title{\textbf{Lebesgue Measure}}
 \author{Abhinav Siddharth}
@@ -36,8 +36,7 @@ add abstract here
 \section{Introduction}
 The goal of this project is to investigate the Lebesgue measure and some of its applications in probability measure. 
 
-\newpage
-\section{Measure}
+\subsection{Measure}
 
 How do we measure a set or an object? If we have a 3-dimensional object, we could find its volume in 2 different ways, we could fill the container with simple objects or $boxes$ and find their sum, or we could encase the whole container in a box and start chipping away smaller boxes. These approaches work only when our box measure is a properly defined measure. 
 
@@ -63,7 +62,7 @@ From our definition, we can also see that two sets having the same number of poi
  \end{enumerate}
  Our goal is to construct a measure that satisfies as many conditions as possible.
  
- \subsection{Length of Intervals}
+ \subsubsection{Length of Intervals}
  
  The length of an interval I with end points $a\leq b$, $a,b \in R$, is defined as:
  $$l(I) = b-a$$
@@ -71,29 +70,29 @@ From our definition, we can also see that two sets having the same number of poi
  
  We immediately conclude that, if $I_1$ and $I_2$ are two intervals with $I_1 \subset I_2$, $l(I1) \leq l(I2)$.
  
- \subsection{Cover}
+ \subsubsection{Cover}
  
  A collection $\{G_{\alpha}\}$ of open sets covers a set A if $A \subset \bigcup G_{\alpha}$. And the collection $\{G_{\alpha}\}$ is called the cover.
  
- \subsection{Subcover}
+ \subsubsection{Subcover}
  
  Let C be a cover of a topological space X. A subcover of C is a subset of C that still covers X.
  
- \subsection{Compact Set}
+ \subsubsection{Compact Set}
  
 A set of real numbers is compact if every open cover of the set contains a finite subcover.
 
-\subsection{Heine-Borel Theorem}
+\subsubsection{Heine-Borel Theorem}
 A set of real numbers is compact iff it is closed and bounded.
 
-\subsection{Result}
+\subsubsection{Result}
 If $I,I_1,I_2,\dots ,I_n$ are bounded open intervals with 
 
 $$ I \subset \bigcup_{1}^{n}I_k ,\; then  \;l(I) \leq \sum l(I_k)$$
 
 The length of an interval can not exceed the length of a $finite$ cover.
 
-\subsection{Proposition}
+\subsubsection{Proposition}
 
 If $I,I_1,I_2,\dots ,I_n$ are bounded open intervals with $ I \subset \bigcup I_k$, then $l(I) \leq \sum l(I_k)$. Also, $ l(I) \leq inf\{ \sum l(I_k) | I \subset \bigcup I_k, I_k \; bounded \; intervals \}$.
 
@@ -103,18 +102,16 @@ $$  l(I) \leq 4\epsilon +  \sum l(I_k)$$
 
 As this holds for any $\epsilon$, $l(I) \leq \sum l(I_k)$, the proof is complete.
 
-\newpage
-
-\section{Lebesgue Outer Measure}
+\subsection{Lebesgue Outer Measure}
 
 We have seen that every set of real numbers can be covered with a countable collection of open intervals.
 
-\subsection{Definition}
+\subsubsection{Definition}
 
 A is any subset of R. Form the collection of all countable covers of A by open intervals. The Lebesgue outer measure of A, $m^*(A)$, is given by
 $$m^*(A)= inf{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \, , \; I_k \; open \; intervals}$$
 
-\subsection{Results}
+\subsubsection{Results}
 \begin{enumerate}
     \item $m^*$ is a set function, whose domain is all subsets of R, and range is $[0,\infty]$, the non-negative extended real numbers. Note that the Lebesgue Outer Measure is defined for every subset of R.
     
@@ -126,7 +123,7 @@ $$m^*(A)= inf{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \, , \
 
 \end{enumerate}
 
-\subsection{The outer measure of any interval is it's length.}
+\subsubsection{The outer measure of any interval is it's length.}
 
 Proof:  
 For a closed interval [a,b], let $\epsilon >0$. Then $(a-\epsilon,b+\epsilon)$ covers $[a,b]$ and length of this interval is $b-a+\epsilon$. Since $\epsilon$ is arbitrary $m^*([a,b]) \leq b-a = l([a,b])$.
@@ -139,7 +136,7 @@ Since $a_1<a$ and $b_k>b$, then $ \sum l(I_n) > b_k -a_1 $. So, $m^*([a,b]) = b-
 
 If I is an unbounded interval, then given any natural number $n \in N$, there is a closed interval $J \subset I$ with $l(J)=n$. Hence $m^*(I) \geq m^*(J) = l(J)=n$. Since $m^*(I) \geq n \, and \, n \in N$ is arbitrary, then $m^*(I)=\infty=l(I)$. 
 
-\subsection{Outer Measure is translation invariant}
+\subsubsection{Outer Measure is translation invariant}
 $m^*(A)=m^*(A+y)$
 
 Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from sec 1.1.7. $\sum l(I_n) < M+ \epsilon$, so if $y \in R$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.
@@ -149,7 +146,7 @@ Now, let ${J_n}$ be a collection of bounded open intervals such that $\cup J_n \
 Suppose $m^*(A)= \infty$.Then for any$\{I_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A \subset \cup I_n$, we must
 have$\sum l(I_n) =\infty$ .Consider A+y. For any $\{J_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A+y \subset \cup J_n$, the collection $\{J_n - y\}_{n=1}^{\infty} $ is a set of bounded open intervals such that $A+y \subset \cup J_n -y$. So $\sum l(J_n - y) =\infty$. But l($J_n$) =l($J_n - y$), so we must have $\sum l(J_n) =\infty$. Since $\{J_n\}_{n=1}^{\infty} $ is an arbitrary collection of bounded open intervals covering A+y, we must have $m^*(A)=m^*(A+y)= \infty$. 
 
-\subsection{Outer Measure is countably sub-additive}
+\subsubsection{Outer Measure is countably sub-additive}
 
 That is, if $\{E_k\}_{k=1}^{\infty} $ is any countable collection of sets, then
 $$ m^*(\bigcup_{k=1}^{\infty} E_k) \leq \sum_{k=1}^{\infty} m^{*}(E_k)$$
@@ -165,26 +162,38 @@ $$  m^{*}(\bigcup_{k=1}^{\infty} E_k) \leq [\sum_{k=1}^{\infty}m^{*}(E_k)]+\epsi
 
 Since this holds for each $\epsilon>0$, it also holds for $\epsilon=0$. The proof is complete.
 
-\subsection{$[0,1]$ is not countable}
+The finite sub-additivity property follows from countable sub-additivity by taking $E_k = \phi$ for $k>n$.
 
-As seen in Sec.3.3 $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0, (refer to Royden and Fitzpatrick pg.31), therefore $[0,1]$ is not countable.
+\subsubsection{$[0,1]$ is not countable}
 
-\newpage
-\section{$\sigma$-Algebra of Lebesgue Measurable sets}
+As seen in Sec.1.2.3 $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0, (refer to Royden and Fitzpatrick pg.31), therefore $[0,1]$ is not countable.
 
-\subsection{Definition}
+
+\subsection{$\sigma$-Algebra of Lebesgue Measurable sets}
+
+Unfortunately the outer measure fails to be countably additive on all subsets of R, it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905. However, we can salvage matters by measuring a certain class of sets in $R$, henceforth called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
+
+\subsubsection{Carathedory's Measurability Criteria}
+
+E is any set of real numbers. If
+
+$$m^*(X)= m^*(X \cap E) + m^*(x \cap E^c) $$
+for every set X of real numbers, then the set E is said to be Lebesgue Measurable set of real numbers.
+
+\subsubsection{Definition of $\sigma$-Algebra}
 A $\sigma$-algebra (or $\sigma$-field) $\Sigma$ on a set $\Omega$ is a subset of $P(\Omega)$ (the power set of $\Omega$) such that it satisfies the following properties -
 
 
 \begin{enumerate}
 	\item $\Omega$ $\in$ $\Sigma$ \textit{(property 1)}
 	\item If A is an element of $\Sigma$ then its complement also is an element of $\Sigma$ i.e A $\in$ $\Sigma$ $\Rightarrow$ A$^c$ $\in$ $\Sigma$ \textit{(\textit{property 2})}
-	\item If A$_i$ $\in$ $\Sigma$, $i$ $\in$ $\mathbb{N}$, then $\bigcup\limits_{i=1}^n$A$_i$ $\in$ $\Sigma$ \textit{(\textit{property 3})}
+	\item If $A_i \in \Sigma$, 
+	$i\in \mathbb{N}$, then $\bigcup\limits_{i=1}^{n}A_i \in \Sigma$\textit{(\textit{property 3})}
 \end{enumerate}
 
 
 
-\subsection{Examples}
+\subsubsection{Examples}
 \begin{enumerate}
 	\item Consider $\Sigma$ $=$ \{$\phi$, $\Omega$\}. The given set is a $\sigma$-algebra on $\Omega$ as it satisfies all the properties needed. Observe that $\phi$ is also included in $\Sigma$ by \textit{property 2}. \textit{Property 1} is also satisfied by the given $\sigma$-algebra. $\phi $ $\cup$ $\Omega$ = $\Omega$ $\in \Sigma$, so \textit{property 3} is also satisfied.
 	\item Consider $\Sigma$ = $P(\Omega)$. Then, $\Sigma$ satisfies \textit{property 1} as $\Omega$ $\in$ $\Sigma$. Furthermore, $X^c$ = $\phi$ $\in$ $\Sigma$ and hence it satisfies \textit{property 2}. As $\Sigma$ contains all the subsets of $\Omega$, it is guaranteed that the union of any number of subsets of $\Omega$ exists in $\Sigma$, and hence satisfying \textit{property 3}. Hence $\Sigma$ = $P(\Omega)$ is a $\sigma$-algebra. 
@@ -192,31 +201,32 @@ A $\sigma$-algebra (or $\sigma$-field) $\Sigma$ on a set $\Omega$ is a subset of
 \end{enumerate}
 
 
-\subsection{Proposition 1}
+\subsubsection{Proposition 1}
 If $\Sigma$ is a $\sigma$-algebra on $\Omega$, and A$_1$, A$_2$, A$_3$,....A$_n$ $\in$ $\Sigma$, then $\bigcap\limits_{i=1}^n$A$_i$ $\in$ $\Sigma$.
 
 \textbf{Proof: }If A$_1$, A$_2$, A$_3$,....A$_n$ $\in$ $\Sigma$, then A$_1^c$, A$_2^c$, A$_3^c$,....A$_n^c$ $\in$ $\Sigma$ and $\bigcup\limits_{i=1}^n$A$_i^c$ $\in$ $\Sigma$. Then by \textit{property 2}, $(\bigcup\limits_{i=1}^n$A$_i^c)^c$ = $\bigcap\limits_{i=1}^n$A$_i$ $\in$ $\Sigma$.
 
 
-\subsection{Proposition 2}
+\subsubsection{Proposition 2}
 If $\Sigma$ is a $\sigma$-algebra on $\Omega$ and A, B $\in$ $
 Sigma$, then A$\setminus$B = A - B $\in$ $\Sigma$.
 
 \textbf{Proof: }If B $\in$ $\Sigma$, then B$^c$ $\in$ $\Sigma$ by  \textit{property 2}. So, A $\cap$ B$^c$ = A$\setminus$B $\in$ $\Sigma$ (As seen in proposition 1).
 
 
-\subsection{Proposition 3}
+\subsubsection{Proposition 3}
 If $\Sigma_i$ is a $\sigma$-algebra on $\Omega$, i $\in \mathbb{N}$, then $\bigcap\limits_{i=1}^n$ $\Sigma_i$ is also a $\sigma$-algebra on $\Omega$.
 
 \textbf{Proof: }Consider the $\sigma$-algebras $\Sigma_1$, $\Sigma_2$, $\Sigma_3$,... $\Sigma_n$ defined on $\Omega$, then the smallest intersection of all such $\sigma$-algebras would be \{$\phi$, $\Omega$\}, which is a $\sigma$-algebra by definition. Also, if A is an element of the intersection, then A$^c$ would also be an element of the intersection, which satisfies \textit{property 2}. Also, A $\cup$ A$^c$ = $\Omega$ $\in$ $\Sigma$ which satisfies properties 1 and 3.
 
 
 
-\subsection{Proposition 4}
+\subsubsection{Proposition 4}
 For $Y$ $\subseteq$ P($\Omega$), there exists a smallest $\sigma$-algebra that contains $Y$, called the $\sigma$-algebra generated by $Y$, given by the intersection of all such $\sigma$-algebras $\Sigma$ such that $\Sigma \supseteq Y$. That is, $\sigma$($Y$) = $\bigcap\limits_{\Sigma \supseteq Y}\Sigma$.
 
 \textbf{Proof: }Consider $\sigma$-algebras $\Sigma_1$, $\Sigma_2$, $\Sigma_3$,....  $\Sigma_n$ $\supseteq $ $Y$ defined on $\Omega$. Then $\bigcap\limits_{i=1}^n \Sigma_i \supseteq Y$. As $Y \in$ $\Sigma_i$, $Y^c \in \Sigma_i$ for i = 1, 2, 3...n which satisfies \textit{property 2}. Furthermore, $\Omega$ $\in \Sigma_i$ which satisfies \textit{property 1}. $Y \cup Y^c$ = $\Omega$ which satisfies \textit{property 3}. Hence $\sigma(Y)$ is a $\sigma$-algebra.
 
 For example, consider $\Omega$ = \{1, 2, 3, 4\} and $Y$ = \{\{1\}, \{2\}\}. Then the smallest $\sigma$-algebra on $\Omega$ containing $Y$ is $\sigma(Y)$ = \{$\phi$, \{1\}, \{2\}, \{1, 2\}, \{3, 4\}, \{1, 3, 4\}, \{2, 3, 4\}, $\Omega$\}. Also note that if $Y$ is a $\sigma$-algebra, then $\sigma(Y)$ = $Y$.
+
 
 \end{document}
