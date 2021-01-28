@@ -320,7 +320,19 @@ By translational invariance of Lebesgue measures,
 $$1 \leq \sum\limits_{n=1}^\infty m(A) \leq 3 $$
 $$\Rightarrow 1 \leq \lim_{n \rightarrow \infty} n m(A) \leq 3 $$
 Which is not possible, as $\lim_{n \rightarrow \infty} n m(A)$ can take only one of two values - either 0 or $\infty$. Hence, the set $A$ is not Lebesgue measurable.
-%add examples here too, find lebesgue measure of some sets
+
+\subsubsection{Examples}
+\begin{itemize}
+	\item Consider an interval $[2, 5]$ on $\mathbb{R}$. Then, the Lebesgue measure of the interval $m([2, 5]$ is given by $l([2, 5]) = 5 - 2 = 3$. Note that the Lebesgue measures of $(2, 5)$, $(2, 5]$ and $[2, 5)$ are also 3.
+	\item The Lebesgue measure of the Cartesian product of intervals $[2, 5]$ and $[2, 4]$ is $(5-2)(4-2) = 6$, which is equal to the area of the corresponding rectangle.
+	\item The set of all rational numbers given by $\mathbb{Q}$ has Lebesgue measure equal to zero.
+	\item The set $\{1, 2, 3, 4\}$ has Lebesgue measure equal to zero.
+	\item The Cantor ternary set is an example of an uncountable set that has Lebesgue measure equal to 0. The cantor ternary set $\mathcal{C}$ is given by
+	$$\mathcal{C} = \bigcap\limits_{n=1}^\infty C_n$$
+	where
+	$$C_n = \frac{C_{n-1}}{3} \cup ( \frac{2}{3} + \frac{C_{n-1}}{3} ) \  \forall\ n \geq 1 \ and\ C_0 =  [0, 1]$$
+	\item Vitali sets are \textbf{not} Lebesgue measurable (see the proof of existence of non-measurable sets given previously in Sec.1.5.2).
+\end{itemize}
 
 \subsubsection{Outer and Inner approximation of Lebesgue measure}
 
@@ -329,17 +341,17 @@ $$ m^*(B \sim A)= m^*(B)-m^*(A).$$
 This follows from Sec 1.3.1
 $$m^*(B)=m^*(B \cap A) + m^*(B \cap A^C)= m^*(A)+  m^*(B \sim A).$$
 
-{\large Theorem}
+{\large \textbf{Theorem}}
 
 For an arbitrary subset E of $\mathbb{R}$, following assertions are equivalent to measurability of E
 
 \begin{enumerate}
 
-    \item For each $\epsilon >0$, there is an open set O containing E for which $m^{*}(O \sim E)<\epsilon$.(Outer approximation by open sets)
-    \item There is a $G_{\delta}$ set G containing E for which $m*(G \sim E) =0$. 
+    \item For each $\epsilon >0$, there is an open set $O$ containing E for which $m^{*}(O \sim E)<\epsilon$.(Outer approximation by open sets)
+    \item There is a $G_{\delta}$ set $G$ containing $E$ for which $m*(G \sim E) =0$. 
     
-    \item For each $\epsilon >0$, there is an closed set F contained in E for which $m^{*}(E \sim F)<\epsilon$.(Inner approximation by closed sets)
-    \item There is a $F_{\sigma}$ set F containing E for which $m*(E \sim F) =0$. 
+    \item For each $\epsilon >0$, there is an closed set $F$ contained in $E$ for which $m^{*}(E \sim F)<\epsilon$.(Inner approximation by closed sets)
+    \item There is a $F_{\sigma}$ set $F$ containing $E$ for which $m*(E \sim F) =0$. 
 \end{enumerate}
 
 Here, $G_{\delta}$ denotes a subset that is a countable intersection of open sets and $F_{\sigma}$ is a countable union of closed sets.
