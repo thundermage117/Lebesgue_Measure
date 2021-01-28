@@ -42,10 +42,9 @@ How do we measure a set or an object? If we have a 3-dimensional object, we coul
 
 The mathematical concept of measure is a generalisation of length in $\mathbb{R}$, area in $\mathbb{R}^2$ or volume in $\mathbb{R}^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $\mathbb{R}^n$ we are using and $E \subset \mathbb{R}^n$.
 
-We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $\mathbb{R}^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant). Here, we hit a roadblock in our definition of a measure:
-$$(0,1)= \bigcup_{x \in (0,1)} \{x\} \, and \, 1 \neq \sum_{(0,1)}0$$
+We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $\mathbb{R}^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant).
 
-From our definition, we can also see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A.
+Here, we hit a roadblock in our definition of a measure, from our definition, we can see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A.
  
  Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $\mathbb{R}^n$ applying all the above properties. 
  
@@ -259,7 +258,7 @@ Therefore, since the measurable sets are a $\sigma$-algebra containing all open 
 Every Borel set is Lebesgue measurable, but not vice-versa, there exist sets that are Lebesgue measurable which are not Borel sets.
 %add examples here
 The collection of all Lebesgue measurable sets is a $\sigma$-algebra $\mathbb{M}$, and $\mathbb{B}$, the collection of Borel sets, then
-$$\mathbb{B} \subset \mathbb{M} \subset 2^{\mathbb{R}} $$
+$$\mathbb{B} \subset \mathbb{M} $$
 
 
 \subsection{Lebesgue Measure}
@@ -332,6 +331,27 @@ Which is not possible, as $\lim_{n \rightarrow \infty} n m(A)$ can take only one
 \end{document}
 %add examples here too, find lebesgue measure of some sets
 
+\subsubsection{Outer and Inner approximation of Lebesgue measure}
+
+Measurable sets possess the following excision property: If A is a measurable set of finite outer measure that is contained in B, then
+$$ m^*(B \sim A)= m^*(B)-m^*(A).$$
+This follows from Sec 1.3.1
+$$m^*(B)=m^*(B \cap A) + m^*(B \cap A^C)= m^*(A)+  m^*(B \sim A).$$
+
+{\large Theorem}
+
+For an arbitrary subset E of $\mathbb{R}$, following assertions are equivalent to measurability of E
+
+\begin{enumerate}
+
+    \item For each $\epsilon >0$, there is an open set O containing E for which $m^{*}(O \sim E)<\epsilon$.(Outer approximation by open sets)
+    \item There is a $G_{\delta}$ set G containing E for which $m*(G \sim E) =0$. 
+    
+    \item For each $\epsilon >0$, there is an closed set F contained in E for which $m^{*}(E \sim F)<\epsilon$.(Inner approximation by closed sets)
+    \item There is a $F_{\sigma}$ set F containing E for which $m*(E \sim F) =0$. 
+\end{enumerate}
+
+Here, $G_{\delta}$ denotes a subset that is a countable intersection of open sets and $F_{\sigma}$ is a countable union of closed sets.
 
 
 \end{document}
