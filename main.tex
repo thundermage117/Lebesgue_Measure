@@ -262,6 +262,30 @@ The collection of all Lebesgue measurable sets is a $\sigma$-algebra $\mathbb{M}
 $$\mathbb{B} \subset \mathbb{M} \subset 2^{\mathbb{R}} $$
 
 
+\subsection{Lebesgue Measure}
+
+By restricting outer measure of to a class of measurable sets, we can define the Lebesgue measure. It is denoted by $m$, if E is a measurable set, it's Lebesgue measure is defined to be
+$$m(E)=m^*(E)$$
+
+We can use all our previous results to determine the Lebesgue measure of specific sets of real numbers, note that all following sets are presumed to be Lebesgue measurable sets of real numbers
+\subsubsection{Theorem}
+\begin{enumerate}
+    \item $m(\phi)$=$m(\{a\})$ = 0.
+    \item $m(I)$ = $l(I)$.
+    \item $m$(countable set) = 0.
+    \item $m$(subset of a set with measure 0) = 0.
+    \item $m(\cup E_k) \leq \sum m(E_k)$ (equal when $E_k$ are disjoint).
+    \item $m(E_1 \cup E_2) + m(E_1 \cap E_2) = m(E_1)+ m(E_2)$.
+    \item $m(E_1) \leq m(E_2)\, if \, E_1 \subset E_2$. If in addition, $m(E_2) <\infty$, then $m(E_2)-m(E_1)=m(E_2-E_1)$.
+    \item If $E_1 \subset E_2 \subset E_3 \dots$ then $m(\cup E_k)=m(\lim E_k)=\lim m(E_k)$
+    \item If $E_1 \supset E_2 \supset E_3 \dots$ and $m(E_1) < \infty $then $m(\cap     E_k)=m(\lim E_k)=\lim m(E_k)$
+    \item If $m(\cup E_k) < \infty$, then $\lim sup m(E_k) \leq m(\lim sup E_k)$
+    \item  $ m(\lim inf E_k) \leq \lim inf m(E_k) $
+    \item If $\lim inf E_k = \lim sup E_k$ and $m(\cup E_k)<\infty$, then $m(\lim E_k)=\lim m(E_k)$
+\end{enumerate}
+%add examples here too, find lebesgue measure of some sets
+
+
 
 
 
