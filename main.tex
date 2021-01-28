@@ -267,8 +267,21 @@ $$\mathbb{B} \subset \mathbb{M} \subset 2^{\mathbb{R}} $$
 By restricting outer measure of to a class of measurable sets, we can define the Lebesgue measure. It is denoted by $m$, if E is a measurable set, it's Lebesgue measure is defined to be
 $$m(E)=m^*(E)$$
 
-We can use all our previous results to determine the Lebesgue measure of specific sets of real numbers, note that all following sets are presumed to be Lebesgue measurable sets of real numbers
-\subsubsection{Theorem}
+We can use all our previous results to determine the Lebesgue measure of specific sets of real numbers, note that all following sets are presumed to be Lebesgue measurable sets of real numbers.
+
+We can infer the following properties for Lebesgue measurable sets-
+\begin{enumerate}
+	\item $m(\bigcup \limits_{i=1}^\infty A_i)$ = $\sum \limits_{i=1}^\infty m(A_i)$ for $A_i \cap A_j = \phi$ for $i \neq j$ for all $A_i$ $\in$ $\Sigma$, a $\sigma$-algebra ($\sigma$-additivity).
+	\item $m(I)$ = $l(I)$ for every interval $I$.
+	\item if $E$ $\subset$ $F$ $\subset$ $\mathbb{R}$, then $0 \leq m(E) \leq m(F) \leq \infty$.
+	\item $m$ is translation invariant i.e $m(x + E)$ = $m(E)$ for all $x$ $\in$ $\mathbb{R}$
+	\item Both $\phi$ and $\mathbb{R}$ are measurable with $m(\phi)$ = 0 and $m(\mathbb{R})$ = $\infty$.
+	\item If $E$ is measurable, then $E^c$ is also measurable
+	\item If $E_1$, $E_2$, $E_3$,.... $E_n$ are measurable, then $\bigcup\limits_{i=1}^nE_i$ and $\bigcap\limits_{i=1}^nE_i$ are measurable.
+	\item If $E$ is measurable, then $E + x$ is measurable for all $x$ $\in$ $\mathbb{R}$.
+\end{enumerate}
+
+\subsubsection{Propositions}
 \begin{enumerate}
     \item $m(\phi)$=$m(\{a\})$ = 0.
     \item $m(I)$ = $l(I)$.
@@ -283,9 +296,41 @@ We can use all our previous results to determine the Lebesgue measure of specifi
     \item  $ m(\lim inf E_k) \leq \lim inf m(E_k) $
     \item If $\lim inf E_k = \lim sup E_k$ and $m(\cup E_k)<\infty$, then $m(\lim E_k)=\lim m(E_k)$
 \end{enumerate}
+
+
+\subsubsection{Not all sets are Lebesgue measurable}
+
+
+\textbf{Proof: }We define an equivalence relation $x \sim y$ as $x - y$ $\in$ $\mathbb{Q}$ for $x, y$  $\in$ $\mathbb{R}$. This establishes equivalence classes $[x]$ = \{$x + r$ : $r$ $\in$ $\mathbb{Q}$\}. We define $A \subset [0, 1]$ with the following properties-
+
+\begin{itemize}
+	\item For each $[x]$, there is a $p \in A$ with $p \in [x]$.
+	\item For all $p, q \in A$, if $p, q \in [x]$, then $p = q$.
+\end{itemize}
+
+Let $A_n = A + r_n$, where $r_n (n \in \mathbb{N})$ is an enumeration of $\mathbb{Q} \cap [-1,1]$. Then we can claim that $n \neq m \Rightarrow A_n \cap A_m = \phi$. We prove this by contradiction. Assume that there exists $x$ $\in$ $A_n \cap A_m$ for $n \neq m$.
+
+Let $x = r_n + a_n,$ $a_n \in A$ and $x= r_m + a_m,$ $a_m \in A$. Then,
+$$a_n + r_n = a_m + r_m$$
+$$\Rightarrow a_n - a_m = r_m - r_n \in \mathbb{Q}$$
+Then, $a_n$ and $a_m$ satisfies the equivalence relation $a_n \sim a_m$. So,
+$$a_n, a_m \in [a_m]$$
+$$\Rightarrow a_n = a_m$$
+$$\Rightarrow r_n = r_m$$
+$$\Rightarrow n = m$$
+Which is a contradiction to our assumption. So, we can claim that 
+$$[0, 1] \subset \bigcup\limits_{n=1}^\infty A_n \subset [-1, 2]$$
+Assume that $m$ is a measure on $P(\mathbb{R})$. Then,
+$$m([0, 1]) \leq m(\bigcup\limits_{n=1}^\infty A_n) \leq m([-1, 2])$$
+$$\Rightarrow 1 \leq m(\bigcup\limits_{n=1}^\infty A_n) \leq 3 $$
+By $\sigma$-additivity of Lebesgue measures,
+$$1 \leq \sum\limits_{n=1}^\infty m(A_n) \leq 3$$
+By translational invariance of Lebesgue measures,
+$$1 \leq \sum\limits_{n=1}^\infty m(A) \leq 3 $$
+$$\Rightarrow 1 \leq \lim_{n \rightarrow \infty} n m(A) \leq 3 $$
+Which is not possible, as $\lim_{n \rightarrow \infty} n m(A)$ can take only one of two values - either 0 or $\infty$. Hence, the set $A$ is not Lebesgue measurable.
+\end{document}
 %add examples here too, find lebesgue measure of some sets
-
-
 
 
 
