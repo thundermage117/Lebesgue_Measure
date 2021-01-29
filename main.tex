@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,mathrsfs}
 
+
 \title{\textbf{Lebesgue Measure}}
 \author{Abhinav Siddharth \and Akshit Gureja \and Jewel Benny}
 \date{January 2021}
@@ -36,7 +37,7 @@ add abstract here
 \section{Introduction}
 The goal of this project is to investigate the Lebesgue measure and some of its applications in probability measure. 
 
-\subsection{Measure}
+\section{Measure}
 
 How do we measure a set or an object? If we have a 3-dimensional object, we could find its volume in 2 different ways, we could fill the container with simple objects or $boxes$ and find their sum, or we could encase the whole container in a box and start chipping away smaller boxes. These approaches work only when our box measure is a properly defined measure. 
 
@@ -61,7 +62,7 @@ Here, we hit a roadblock in our definition of a measure, from our definition, we
  \end{enumerate}
  Our goal is to construct a measure that satisfies as many conditions as possible.
  
- \subsubsection{Length of Intervals}
+ \subsection{Length of Intervals}
  
  The length of an interval I with end points $a\leq b$, $a,b \in \mathbb{R}$, is defined as:
  $$l(I) = b-a$$
@@ -69,7 +70,7 @@ Here, we hit a roadblock in our definition of a measure, from our definition, we
  
  We immediately conclude that, if $I_1$ and $I_2$ are two intervals with $I_1 \subset I_2$, $l(I1) \leq l(I2)$.
  
- \subsubsection{Cover}
+ \subsection{Cover}
  
  A collection $\{G_{\alpha}\}$ of open sets covers a set A if $A \subset \bigcup G_{\alpha}$. And the collection $\{G_{\alpha}\}$ is called the cover.
  
@@ -81,17 +82,17 @@ Here, we hit a roadblock in our definition of a measure, from our definition, we
  
 A set of real numbers is compact if every open cover of the set contains a finite subcover.
 
-\subsubsection{Heine-Borel Theorem}
+\subsection{Heine-Borel Theorem}
 A set of real numbers is compact iff it is closed and bounded.
 
-\subsubsection{Result}
+\subsection{Result}
 If $I,I_1,I_2,\dots ,I_n$ are bounded open intervals with 
 
 $$ I \subset \bigcup_{1}^{n}I_k ,\; then  \;l(I) \leq \sum l(I_k)$$
 
 The length of an interval can not exceed the length of a $finite$ cover.
 
-\subsubsection{Proposition}
+\subsection{Proposition}
 
 If $I,I_1,I_2,\dots ,I_n$ are bounded open intervals with $ I \subset \bigcup I_k$, then $l(I) \leq \sum l(I_k)$. Also, $ l(I) \leq inf\{ \sum l(I_k) | I \subset \bigcup I_k, I_k \; bounded \; intervals \}$.
 
@@ -101,16 +102,16 @@ $$  l(I) \leq 4\epsilon +  \sum l(I_k)$$
 
 As this holds for any $\epsilon$, $l(I) \leq \sum l(I_k)$, the proof is complete.
 
-\subsection{Lebesgue Outer Measure}
+\section{Lebesgue Outer Measure}
 
 We have seen that every set of real numbers can be covered with a countable collection of open intervals.
 
-\subsubsection{Definition}
+\subsection{Definition}
 
 A is any subset of $\mathbb{R}$. Form the collection of all countable covers of A by open intervals. The Lebesgue outer measure of A, $m^*(A)$, is given by
 $$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \, , \; I_k \; open \; intervals\Big\}$$
 
-\subsubsection{Results}
+\subsection{Results}
 \begin{enumerate}
     \item $m^*$ is a set function, whose domain is all subsets of $\mathbb{R}$, and range is $[0,\infty]$, the non-negative extended real numbers. Note that the Lebesgue Outer Measure is defined for every subset of $\mathbb{R}$.
     
@@ -122,7 +123,7 @@ $$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \
 
 \end{enumerate}
 
-\subsubsection{The outer measure of any interval is it's length.}
+\subsection{Outer Measure of any interval is it's length}
 
 Proof:  
 For a closed interval [a,b], let $\epsilon >0$. Then $(a-\epsilon,b+\epsilon)$ covers $[a,b]$ and length of this interval is $b-a+\epsilon$. Since $\epsilon$ is arbitrary $m^*([a,b]) \leq b-a = l([a,b])$.
@@ -135,17 +136,17 @@ Since $a_1<a$ and $b_k>b$, then $ \sum l(I_n) > b_k -a_1 $. So, $m^*([a,b]) = b-
 
 If I is an unbounded interval, then given any natural number $n \in N$, there is a closed interval $J \subset I$ with $l(J)=n$. Hence $m^*(I) \geq m^*(J) = l(J)=n$. Since $m^*(I) \geq n \, and \, n \in N$ is arbitrary, then $m^*(I)=\infty=l(I)$. 
 
-\subsubsection{Outer Measure is translation invariant}
+\subsection{Outer Measure is translation invariant}
 $m^*(A)=m^*(A+y)$
 
-Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from sec 1.1.7. $\sum l(I_n) < M+ \epsilon$, so if $y \in \mathbb{R}$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.
+Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from Sec 2.5 $\sum l(I_n) < M+ \epsilon$, so if $y \in \mathbb{R}$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.
 
 Now, let ${J_n}$ be a collection of bounded open intervals such that $\cup J_n \supset A+y $.Assume that $\sum l(J_n)< M$. Then ${J_n-y}$ is a covering of A and $\sum l(J_n-y)=\sum l(J_n) < M$, a contradiction. So, $\sum l(J_n) \geq M$ and hence $m^*(A)\geq M$. So $m^*(A)=m^*(A+y)=M$
 
 Suppose $m^*(A)= \infty$.Then for any$\{I_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A \subset \cup I_n$, we must
 have$\sum l(I_n) =\infty$ .Consider A+y. For any $\{J_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A+y \subset \cup J_n$, the collection $\{J_n - y\}_{n=1}^{\infty} $ is a set of bounded open intervals such that $A+y \subset \cup J_n -y$. So $\sum l(J_n - y) =\infty$. But l($J_n$) =l($J_n - y$), so we must have $\sum l(J_n) =\infty$. Since $\{J_n\}_{n=1}^{\infty} $ is an arbitrary collection of bounded open intervals covering A+y, we must have $m^*(A)=m^*(A+y)= \infty$. 
 
-\subsubsection{Outer Measure is countably sub-additive}
+\subsection{Outer Measure is countably sub-additive}
 
 That is, if $\{E_k\}_{k=1}^{\infty} $ is any countable collection of sets, then
 $$ m^*(\bigcup_{k=1}^{\infty} E_k) \leq \sum_{k=1}^{\infty} m^{*}(E_k)$$
@@ -165,28 +166,28 @@ The finite sub-additivity property follows from countable sub-additivity by taki
 
 \subsubsection{$[0,1]$ is not countable}
 
-As seen in Sec.1.2.3 $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0, (refer to Royden and Fitzpatrick pg.31), therefore $[0,1]$ is not countable.
+As seen in Sec.3.3 $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0, (refer to Royden and Fitzpatrick pg.31), therefore $[0,1]$ is not countable.
 
 
-\subsection{$\sigma$-Algebra of Lebesgue Measurable sets}
+\section{$\sigma$-Algebra of Lebesgue Measurable sets}
 
 Unfortunately the outer measure fails to be countably additive on all subsets of $\mathbb{R}$, it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905. However, we can salvage matters by measuring a certain class of sets in $\mathbb{R}$, henceforth called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
 
-\subsubsection{Carathedory's Measurability Criteria}
+\subsection{Carathedory's Measurability Criteria}
 
 E is any set of real numbers. If
 
 $$m^*(X)= m^*(X \cap E) + m^*(x \cap E^c) $$
 for every set X of real numbers, then the set E is said to be Lebesgue Measurable set of real numbers.
 
-\subsubsection{Results}
+\subsection{Results}
 \begin{enumerate}
     \item Any set of outer measure is measurable, in other words, any countable set is measurable.
     \item The union of a finite collection of measurable sets is measurable. This can be inferred using set identities and finite sub-additivity property of outer measure, then applying induction.
     \item The union of countable collection of measurable sets is measurable.
 \end{enumerate}
 
-\subsubsection{Definition of $\sigma$-Algebra}
+\subsection{$\sigma$-Algebra}
 A $\sigma$-algebra (or $\sigma$-field) $\Sigma$ on a set $\Omega$ is a subset of $P(\Omega)$ (the power set of $\Omega$) such that it satisfies the following properties -
 
 
@@ -233,7 +234,7 @@ For $Y$ $\subseteq$ P($\Omega$), there exists a smallest $\sigma$-algebra that c
 
 For example, consider $\Omega$ = \{1, 2, 3, 4\} and $Y$ = \{\{1\}, \{2\}\}. Then the smallest $\sigma$-algebra on $\Omega$ containing $Y$ is $\sigma(Y)$ = \{$\phi$, \{1\}, \{2\}, \{1, 2\}, \{3, 4\}, \{1, 3, 4\}, \{2, 3, 4\}, $\Omega$\}. Also note that if $Y$ is a $\sigma$-algebra, then $\sigma(Y)$ = $Y$.
 
-\subsubsection{Every interval is measurable}
+\subsection{Every interval is measurable}
 From the preceding propositions, we immediately conclude that the collection of measurable sets is a $\sigma$-algebra. Also, Lebesgue outer measure $m^*$, written as $m$ when restricted to the $\sigma$-algebra $E$ subsets of $R$ satisfying Carathedory's condition, is countably additive on $E$, in other words, $m$ is countably additive on Lebesgue measurable subsets of R.
 
 It can further be shown Intervals satisfy Caratheodory's condition, using the Heine-Borel theorem. But we can use Borel sets to extend our applicability of Lebesgue measure to a much larger group of subsets.
@@ -261,7 +262,7 @@ The collection of all Lebesgue measurable sets is a $\sigma$-algebra $\mathscr{M
 $$\mathscr{B} \subset \mathscr{M} \subset 2^{\mathbb{R}} $$
 
 
-\subsection{Lebesgue Measure}
+\section{Lebesgue Measure}
 
 By restricting outer measure of to a class of measurable sets, we can define the Lebesgue measure. It is denoted by $m$, if E is a measurable set, it's Lebesgue measure is defined to be
 $$m(E)=m^*(E)$$
@@ -270,7 +271,7 @@ We can use all our previous results to determine the Lebesgue measure of specifi
 
 We can infer the following properties for Lebesgue measurable sets-
 
-\subsubsection{Properties}
+\subsection{Properties}
 \begin{enumerate}
     \item $m(\phi)$=$m(\{a\})$ = 0, $m(\mathbb{R})$ = $\infty$.
     \item $m(I)$ = $l(I)$.
@@ -289,7 +290,7 @@ We can infer the following properties for Lebesgue measurable sets-
 \end{enumerate}
 
 
-\subsubsection{Not all sets are Lebesgue measurable}
+\subsection{Not all sets are Lebesgue measurable}
 
 
 \textbf{Proof: }We define an equivalence relation $x \sim y$ as $x - y$ $\in$ $\mathbb{Q}$ for $x, y$  $\in$ $\mathbb{R}$. This establishes equivalence classes $[x]$ = \{$x + r$ : $r$ $\in$ $\mathbb{Q}$\}. We define $A \subset [0, 1]$ with the following properties-
@@ -321,7 +322,7 @@ $$1 \leq \sum\limits_{n=1}^\infty m(A) \leq 3 $$
 $$\Rightarrow 1 \leq \lim_{n \rightarrow \infty} n m(A) \leq 3 $$
 Which is not possible, as $\lim_{n \rightarrow \infty} n m(A)$ can take only one of two values - either 0 or $\infty$. Hence, the set $A$ is not Lebesgue measurable.
 
-\subsubsection{Examples}
+\subsection{Examples}
 \begin{itemize}
 	\item Consider an interval $[2, 5]$ on $\mathbb{R}$. Then, the Lebesgue measure of the interval $m([2, 5]$ is given by $l([2, 5]) = 5 - 2 = 3$. Note that the Lebesgue measures of $(2, 5)$, $(2, 5]$ and $[2, 5)$ are also 3.
 	\item The set of all rational numbers given by $\mathbb{Q}$ has Lebesgue measure equal to zero.
@@ -330,14 +331,14 @@ Which is not possible, as $\lim_{n \rightarrow \infty} n m(A)$ can take only one
 	$$\mathcal{C} = \bigcap\limits_{n=1}^\infty C_n$$
 	where
 	$$C_n = \frac{C_{n-1}}{3} \cup ( \frac{2}{3} + \frac{C_{n-1}}{3} ) \  \forall\ n \geq 1 \ and\ C_0 =  [0, 1]$$
-	\item Vitali sets are \textbf{not} Lebesgue measurable (see the proof of existence of non-measurable sets given previously in Sec.1.5.2).
+	\item Vitali sets are \textbf{not} Lebesgue measurable (see the proof of existence of non-measurable sets given previously in Sec.5.2).
 \end{itemize}
 
-\subsubsection{Outer and Inner approximation of Lebesgue measure}
+\subsection{Outer and Inner approximation of Lebesgue measure}
 
 Measurable sets possess the following excision property: If A is a measurable set of finite outer measure that is contained in B, then
 $$ m^*(B \sim A)= m^*(B)-m^*(A).$$
-This follows from Sec 1.3.1
+This follows from Sec 4.1
 $$m^*(B)=m^*(B \cap A) + m^*(B \cap A^C)= m^*(A)+  m^*(B \sim A).$$
 
 {\large \textbf{Theorem}}
@@ -355,7 +356,7 @@ For an arbitrary subset E of $\mathbb{R}$, following assertions are equivalent t
 
 Here, $G_{\delta}$ denotes a subset that is a countable intersection of open sets and $F_{\sigma}$ is a countable union of closed sets.
 
-\subsubsection{Extension to $\mathbb{R}^n$}
+\subsection{Extension to $\mathbb{R}^n$}
 
 The modern construction of Lebesgue Measure is an application of 
 Caratheodory's extension theorem (not discussed here).
@@ -373,7 +374,7 @@ These Lebesgue measurable sets form a $\sigma$-algebra, and the Lebesgue measure
     \item The Lebesgue measure of the Cartesian product of intervals $[2, 5]$ and $[2, 4]$ is $(5-2)(4-2) = 6$, which is equal to the area of the corresponding rectangle.
 \end{itemize}
 
-\subsubsection{Banach-Tarski Paradox}
+\subsection{Banach-Tarski Paradox}
 Banach-Tarski paradox is a famous example to be demonstrated here, the Banach-Tarski theorem tells us that given a sphere in 3-dimensional space, there exists a decomposition of the ball into a number of finite number of disjoint subsets, which can be put back in a different way to yield two identical copies of the original sphere. This can be done using as few as 5 pieces.
 
 The reason this theorem is called a paradox is that it contradicts our intuition about volume.
