@@ -324,7 +324,6 @@ Which is not possible, as $\lim_{n \rightarrow \infty} n m(A)$ can take only one
 \subsubsection{Examples}
 \begin{itemize}
 	\item Consider an interval $[2, 5]$ on $\mathbb{R}$. Then, the Lebesgue measure of the interval $m([2, 5]$ is given by $l([2, 5]) = 5 - 2 = 3$. Note that the Lebesgue measures of $(2, 5)$, $(2, 5]$ and $[2, 5)$ are also 3.
-	\item The Lebesgue measure of the Cartesian product of intervals $[2, 5]$ and $[2, 4]$ is $(5-2)(4-2) = 6$, which is equal to the area of the corresponding rectangle.
 	\item The set of all rational numbers given by $\mathbb{Q}$ has Lebesgue measure equal to zero.
 	\item The set $\{1, 2, 3, 4\}$ has Lebesgue measure equal to zero.
 	\item The Cantor ternary set is an example of an uncountable set that has Lebesgue measure equal to 0. The cantor ternary set $\mathcal{C}$ is given by
@@ -355,6 +354,35 @@ For an arbitrary subset E of $\mathbb{R}$, following assertions are equivalent t
 \end{enumerate}
 
 Here, $G_{\delta}$ denotes a subset that is a countable intersection of open sets and $F_{\sigma}$ is a countable union of closed sets.
+
+\subsubsection{Extension to $\mathbb{R}^n$}
+
+The modern construction of Lebesgue Measure is an application of 
+Caratheodory's extension theorem (not discussed here).
+
+Fix $n \in \mathbb{N}$. A $box$ is a set of the form:
+$$ B= \prod_{i=1}^{n}[a_i,b_i]$$
+where $b_i \geq a_i$, and the product symbol represents a Cartesian product. The volume of this box is defined to be
+$$ vol(B)=\prod_{i=1}^{n}l([a_i,b_i]).$$
+For any subset A of $\mathbb{R}^n$, we can define its outer measure $\lambda^{*}(A)$ by:
+$$\lambda^{*}(A)=inf\Big\{ \sum_{B \in C}vol(B): C\; is\; a\; countable \;collection\; of \;boxes\; whose\; union\; covers \; A\Big\}$$
+We then define the set A to be Lebesgue-measurable if for every subset S of $\mathbb{R}^n$, 
+$$\lambda^{*}(S)= \lambda^{*}(S \cap A) + \lambda^{*}(S \cap A^C)$$
+These Lebesgue measurable sets form a $\sigma$-algebra, and the Lebesgue measure is defined by $\lambda(A)=\lambda^{*}(A)$ for any Lebesgue measurable set A.
+\begin{itemize}
+    \item The Lebesgue measure of the Cartesian product of intervals $[2, 5]$ and $[2, 4]$ is $(5-2)(4-2) = 6$, which is equal to the area of the corresponding rectangle.
+\end{itemize}
+
+\subsubsection{Banach-Tarski Paradox}
+Banach-Tarski paradox is a famous example to be demonstrated here, the Banach-Tarski theorem tells us that given a sphere in 3-dimensional space, there exists a decomposition of the ball into a number of finite number of disjoint subsets, which can be put back in a different way to yield two identical copies of the original sphere. This can be done using as few as 5 pieces.
+
+The reason this theorem is called a paradox is that it contradicts our intuition about volume.
+
+While the reassembly process involves only moving the pieces around and rotating them without changing their shape which are closed under the Lebesgue measure, some of the five or more sets in which you divide the sphere are not Lebesgue measurable.
+
+Unlike most theorems in geometry, the proof for the Banach-Tarski theorem itself requires using the axiom of choice, which allows the construction of non-measurable sets.
+
+As some of the sets are non-measurable, it's not possible to define a volume to such sets as seen before. It is therefore absurd to add these 'volumes' in order to double their initial volume. However note that the initial sphere and the final spheres obtained are measurable.
 
 
 \end{document}
