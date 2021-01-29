@@ -17,19 +17,25 @@
 \end{center}
 \hfill
 
-"It is not possible to prepare a report without the assistance of other people. This one is certainly no exception."\newline
+"It is not possible to prepare a report without the assistance of other people. This one is certainly no exception."
+\bigskip
 
-The completion of this report could not have been accomplished without the support of an outstanding group of people, and we would like to thank every one of them.\newline
+The completion of this report could not have been accomplished without the support of an outstanding group of people, and we would like to thank every one of them.
+\bigskip
 
-We would like to express our sincere and deep gratitude towards Lakshmi Burra Ma'am, who instilled in us the ability to develop analytical and abstract thinking. She, through her enthusiasm, has always encouraged and supported us. It's her constant and conscientious guidance, which has helped us complete this report.\newline
+We would like to express our sincere and deep gratitude towards Lakshmi Burra Ma'am, who instilled in us the ability to develop analytical and abstract thinking. She, through her enthusiasm, has always encouraged and supported us. It's her constant and conscientious guidance, which has helped us complete this report.
+\bigskip
 
-Our heartfelt thanks to our TAs, who have provided their invaluable assistance and advised us on every step of this report. \newline
+Our heartfelt thanks to our TAs, who have provided their invaluable assistance and advised us on every step of this report. 
+\bigskip
 
-We are also extremely grateful to our parents for their unfathomable moral support along the way and for educating us at the International Institute of Information Technology, Hyderabad, which has provided us the opportunity to write this report.\newline
+We are also extremely grateful to our parents for their unfathomable moral support along the way and for educating us at the International Institute of Information Technology, Hyderabad, which has provided us the opportunity to write this report.
+\bigskip
 
-Lastly, God who has showered his blessing upon us so abundantly. Without his grace, this project would not have become a reality.\newline
+Lastly, God who has showered his blessing upon us so abundantly. Without his grace, this project would not have become a reality.
+\bigskip
 
-We have no words to express our thanks for the valuable support and guidance we have received.\newline
+We have no words to express our thanks for the valuable support and guidance we have received.
 
 \newpage
 
@@ -405,39 +411,43 @@ As some of the sets are non-measurable, it's not possible to define a volume to 
 
 
 \newpage
-\begin{center}
-    {\Large Probability and Measures}
-\end{center}
+\section{Probability and Measures}
 
-We'll start from the very basics of the probability theory and work our ways up to learn more complex concepts and the involvement of Measure theory in probability.\newline
 
-\subsection* {Random Experiment}
+We'll start from the very basics of the probability theory and work our ways up to learn more complex concepts and the involvement of Measure theory in probability.
+
+\subsection {Random Experiment}
 
 An experiment whose outcome cannot be predicted with certainty even if the experiment is conducted several times under identical conditions.
 
-\subsection* {Sample Space ($\Omega$)}
+\subsection {Sample Space ($\Omega$)}
     
-It s defined as the set of all possible outcomes of an experiment.\newline
-For example:- \newline
-1. Throwing a dice : $\Omega$ = $\{1,2,3,4,5,6\}$\newline
-2. Tossing a coin twice : $\Omega$ = $\{HH, TT, HT, TH\}$, where 'H' represents that the heads and 'T' represents the tails.\newline
+It's defined as the set of all possible outcomes of an experiment.
+
+For example:
+\begin{enumerate}
+    \item Throwing a dice : $\Omega$ = $\{1,2,3,4,5,6\}.$
+    \item  Tossing a coin twice : $\Omega$ = $\{HH, TT, HT, TH\}$, where 'H' represents that the heads and 'T' represents the tails.
+\end{enumerate}
+
 
 In probability theory, an outcome is denoted by $\omega$ and from the definition of the sample space we can say that $\omega$ $\epsilon$ $\Omega$.
-So an outcome is nothing but an element of the sample space.\newline
+So an outcome is nothing but an element of the sample space.
 
-Observe that in probability outcome is the source of randomness and is not of our control in a random experiment.\newline
+Observe that in probability outcome is the source of randomness and is not of our control in a random experiment.
+\bigskip
 
-NOTE - The sample space of an experiment can be countable or uncountable. The sample space of an experiment like tossing a coin n times is countable with 2$^{n}$ outcomes whereas if we want to determine the speed with which the coin tossed would land back is a set of positive real numbers and the sample space would be uncountable. Another example of uncountable sample space could be the set of all points on the circumference of a circle.\newline
+NOTE - The sample space of an experiment can be countable or uncountable. The sample space of an experiment like tossing a coin n times is countable with 2$^{n}$ outcomes whereas if we want to determine the speed with which the coin tossed would land back is a set of positive real numbers and the sample space would be uncountable. Another example of uncountable sample space could be the set of all points on the circumference of a circle.
 \newpage
 One more thing to discuss before going ahead is that often while discussing probability theory, we are not interested in a particular outcome but a subset of the sample space. For example - when a dice is rolled, we might be interested if the outcome is an even number $\{2,4,6\}$ or a prime number $\{2,3,5\}$ rather than the outcome being a particular number like 2 or 5.
 
-\subsection* {Events and event space}
+\subsection {Events and event space}
 The subset of the sample space $\Omega$ which is of our interest is referred to as an event. The subset is referred to as an event space.
 We understand by taking an example of coin tossed thrice and our outcome being at least 2 tails, so our event space is $\{TTH, HTT, THT, TTT\}$ which as we stated is a subset of a sample space. 
 
 We say that an event P $\subseteq$ $\Omega$ has occurred or taken place iff $\omega$ $\epsilon$ P.
 
-\subsection* {Algebra and probability theory}
+\subsection {Algebra and probability theory}
 
 Now, before writing down everything mathematically, lets discuss how we are going to link the two concepts.
 
@@ -453,46 +463,63 @@ Now we are sufficiently equipped to expand our ideas of algebra to probability.
 
 We denote the sample space by $\Omega$, the $\sigma$-algebra(the collection of subsets) on $\Omega$ by $\Sigma$.
 
-\subsection* {Measurable space}
+\subsection {Measurable space}
 ($\Omega$, $\Sigma$) is referred to as a measurable space.
-Probability is a special case of Measure theory and we'll see how.\newline
+Probability is a special case of Measure theory and we'll see how.
+\bigskip
 
-Like measure is the function $\mu$ : $\Sigma$ $\rightarrow$ [0, $\infty$], such that- \newline
-1. $\mu(\phi)$ = 0\newline
-2. If $A_{1}, A_{2} ,A_{3} ....$ are a countable collection of disjoint measurable sets, then \newline $\mu(\bigcup_{1}^{\infty} {A_k}) = \sum_{1}^{\infty}\mu(A_k)$. This is referred to as the countable additivity axiom.\newline
+Like measure is the function $\mu$ : $\Sigma$ $\rightarrow$ [0, $\infty$], such that-
+\begin{enumerate}
+    \item $\mu(\phi)$ = 0
+    \item If $A_{1}, A_{2} ,A_{3} ....$ are a countable collection of disjoint measurable sets, then  $$\mu(\bigcup_{1}^{\infty} {A_k}) = \sum_{1}^{\infty}\mu(A_k).$$ This is referred to as the countable additivity axiom.
+\end{enumerate}
+
 \newpage
-Measure is nothing but a mapping of the subsets included in $\Sigma$ to [0, $\infty$].\newline
+Measure is nothing but a mapping of the subsets included in $\Sigma$ to [0, $\infty$].
+\bigskip
+
 We say that
-\newline
-1. if $\mu(\Omega)$ $<$ $\infty$ , $\mu$ is called a finite measure.\newline
-2. if $\mu(\Omega)$ = $\infty$ , $\mu$ is called a infinite measure.\newline
-3. if $\mu(\Omega)$ =  1 , $\mu$ is called a probability measure.\newline \newline
-So a probability measure is a special case of finite measure with the measure of the $\Omega$ being 1.\newline
+\begin{enumerate}
+    \item If $\mu(\Omega)$ $<$ $\infty$ , $\mu$ is called a finite measure.
+    \item If $\mu(\Omega)$ = $\infty$ , $\mu$ is called a infinite measure.
+    \item If $\mu(\Omega)$ =  1 , $\mu$ is called a probability measure.
+\end{enumerate}
 
-\subsection* {Probability Measure}
-We can define a probability measure($P$) on ($\Omega$, $\Sigma$) as a function $P$: $\Sigma$ $\rightarrow$ [0,1] such that - \newline
-1. $P(\phi)$ = 0\newline
-2. $P(\Sigma)$ = 1\newline
-3. if $A_{1}, A_{2} .... $ are $\Sigma$ measurable sets then $P(\bigcup_{1}^{\infty} {A_k}) = \sum_{1}^{\infty}P(A_k)$. \newline
+So a probability measure is a special case of finite measure with the measure of the $\Omega$ being 1.
+\bigskip
 
-\subsection* {Probability Space}
+\subsection {Probability Measure}
+We can define a probability measure($P$) on ($\Omega$, $\Sigma$) as a function $P$: $\Sigma$ $\rightarrow$ [0,1] such that -
+\begin{enumerate}
+    \item $P(\phi)$ = 0
+    \item $P(\Sigma)$ = 1
+    \item If $A_{1}, A_{2} .... $ are $\Sigma$ measurable sets then $P(\bigcup_{1}^{\infty} {A_k}) = \sum_{1}^{\infty}P(A_k)$.
+\end{enumerate}
 
-The triple ($\Omega,$ $\Sigma,$ $P$) is referred to as a probability space where\newline
-$\Omega$ :Sample space\newline
-$\Sigma$ : Event Space\newline
-$P$: Probability Measure\newline
+\subsection {Probability Space}
+
+The triple ($\Omega,$ $\Sigma,$ $P$) is referred to as a probability space where
+
+$\Omega$ : Sample space
+
+$\Sigma$ : Event Space
+
+$P$ : Probability Measure
 
 So, in probability, $\Sigma$ -measurable sets are called events.
 
 \subsection {Properties of probability measure}
+\begin{enumerate}
+    \item $P(A) \le 1$
+    \item $P(A^{c})$ = 1 - $P(A)$ $\forall A \epsilon \Sigma$
+    \item if $A=B$, then $P(A) = P(B)$
+    \item Monotonocity: if $A \subset B \Rightarrow P(A) \le P(B)$
+    \item $P(B\cap A^{c}) = P(B) - P(A\cap B)$
+    \item $P(A\cup B) = P(A) + P(B) - P(A\cap B)$
+    \item Finite additivity:\hfill If $A_{1}, A_{2} ... A_{n} \epsilon \Sigma$ and suppose they are disjoint. Then - $P(\bigcup_{1}^{n} {A_k}) = \sum_{1}^{n}P(A_k)$.
+\end{enumerate}
 
-1. $P(A) \le 1$\newline
-2. $P(A^{c})$ = 1 - $P(A)$ $\forall A \epsilon \Sigma$\newline
-3. if $A=B$, then $P(A) = P(B)$\newline
-4. Monotonocity: if $A \subset B \Rightarrow P(A) \le P(B)$\newline
-5.$P(B\cap A^{c}) = P(B) - P(A\cap B)$\newline
-6.$P(A\cup B) = P(A) + P(B) - P(A\cap B)$\newline
-7. Finite additivity:\hfill If $A_{1}, A_{2} ... A_{n} \epsilon \Sigma$ and suppose they are disjoint. Then - $P(\bigcup_{1}^{n} {A_k}) = \sum_{1}^{n}P(A_k)$.\newline
+
 \newpage
 \section{References}
 \begin{itemize}
