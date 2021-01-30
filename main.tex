@@ -3,6 +3,8 @@
 \usepackage{amssymb,mathrsfs}
 
 
+
+
 \title{\textbf{Lebesgue Measure}}
 \author{Abhinav Siddharth \and Akshit Gureja \and Jewel Benny}
 \date{January 2021}
@@ -489,7 +491,15 @@ So a probability measure is a special case of finite measure with the measure of
 \bigskip
 
 \subsection {Probability Measure}
-We can define a probability measure($P$) on ($\Omega$, $\Sigma$) as a function $P$: $\Sigma$ $\rightarrow$ [0,1] such that -
+
+A probability measure on S can be expressed on $X$ as
+$$P(A) = \frac{\mu(A)}{\mu(X)}, \ A \in \Sigma$$
+Where $0 < \mu(\Sigma) < \infty$ is a measure.
+\newline
+\newline
+Consider that $m$ is a Lebesgue measure on $\mathbb{R}^n$. If $X \subseteq  \mathbb{R}^n$ and $0 < m(X) < \infty$ , then
+$$P(A) = \frac{m(A)}{m(X)}\,, \ A \subseteq X$$
+Then we can define a probability measure($P$) on ($\Omega$, $\Sigma$) as a function $P$: $\Sigma$ $\rightarrow$ [0,1] such that -
 \begin{enumerate}
     \item $P(\phi)$ = 0
     \item $P(\Sigma)$ = 1
@@ -510,18 +520,48 @@ So, in probability, $\Sigma$ -measurable sets are called events.
 
 \subsection {Properties of probability measure}
 \begin{enumerate}
-    \item $P(A) \le 1$
-    \item $P(A^{c})$ = 1 - $P(A)$ $\forall A \epsilon \Sigma$
+    \item $0 \le P(A) \le 1$
+    \item $P(A^{c})$ = 1 - $P(A)$, $\forall\  A \in \Sigma$
+    \newline \textbf{Proof: } $A$ and $A^c$ are disjoint. So,
+    $$ P(A \cup A^c) = P(A) + P(A^c)$$
+    $A \cup A^c$ gives the entire sample space. So, $P(A \cup A^c) = 1$
+    $$\Rightarrow 1 = P(A) + P(A^c)$$
+    $$\Rightarrow P(A^c) = 1 - P(A)$$
     \item if $A=B$, then $P(A) = P(B)$
-    \item Monotonocity: if $A \subset B \Rightarrow P(A) \le P(B)$
+    \item Monotonicity: if $A \subset B \Rightarrow P(A) \le P(B)$
     \item $P(B\cap A^{c}) = P(B) - P(A\cap B)$
     \item $P(A\cup B) = P(A) + P(B) - P(A\cap B)$
+    \newline \newline In general, by the inclusion-exclusion principle,
+    $$P(\bigcup \limits_{i=1}^nA_i) = \sum \limits_iP(A_i) - \sum \limits_{i<j}P(A_i \cap A_j)$$ 
+    $$ + \sum \limits_{i<j<k}P(A_i \cap A_j \cap A_k) + ....(-1)^{n+1}P(A_1 \cap A_2 \cap A_3....\cap A_n)$$
     \item Finite additivity:\hfill If $A_{1}, A_{2} ... A_{n} \epsilon \Sigma$ and suppose they are disjoint. Then - $P(\bigcup_{1}^{n} {A_k}) = \sum_{1}^{n}P(A_k)$.
 \end{enumerate}
+\subsection{Propositions}
+\begin{enumerate}
+	\item If $E_1 \subset E_2 \subset E_3 \ ....\subset$ and $E = \bigcup \limits_{i=1}^\infty E_i$ lies in $\Sigma$, then 
+	$$lim_{n \rightarrow \infty}P(E_n) = P(E)$$
+	\textbf{Proof: }It is obvious that this limit does exist and is $\leq 1$. Let $F_i = E_i - E_{i-1}$ for $i \geq 2$ and $F_1 = E_1$. Then, $F_j \cap F_k = \phi$ for all $j \neq k$. So, we can write,
+	$$A_n = \bigcup \limits_{i=1}^\infty B_i \ \textrm{and}\  A = \bigcup \limits_{i=1}^\infty B_i$$
+	By countable additivity,
+	$$P(A) = \sum \limits_{i=1}^\infty P(B_i) = \lim_{n \rightarrow \infty } \sum \limits_{i=1}^n P(B_i) = \lim_{n \rightarrow \infty}P(A_n) $$
+	\item If $E_1 \supset E_2 \supset E_3 \ ....\supset$ and $E = \bigcap \limits_{i=1}^\infty E_i$ lies in $\Sigma$, then 
+	$$lim_{n \rightarrow \infty}P(E_n) = P(E)$$
+	\textbf{Proof: } Given $E_1 \supset E_2 \supset E_3 \ ....\supset$. So, $$E_1^c \subset E_2^c \subset E_3^c \ ....\subset \ \textrm{and}\  E^c =  (\bigcap \limits_{i=1}^\infty E_i)^c = \bigcup \limits_{i=1}^\infty E_i^c$$
+	So, from proposition 1,
+	$$P(E^c) = \lim_{n \rightarrow \infty}P(E_n^c)$$
+	$$P(E) = 1 - P(E^c) = 1 - \lim_{n \rightarrow \infty}P(E_n^c) = \lim_{n \rightarrow \infty}(1- P(E_n^c)) = \lim_{n \rightarrow \infty}P(E_n)$$
 
+\end{enumerate}
 
 \newpage
-\section{References}
+\begin{center}
+    {\Large\bfseries\noindent Conclusion}
+\end{center}
+	Add conclusion here
+\newpage
+\begin{center}
+    {\Large\bfseries\noindent References}
+\end{center}
 \begin{itemize}
     \item Lebesgue Measure and Integration: An Introduction - Frank Burk
     \item Invitation to Ergodic Theory - C.E. Silva
@@ -530,9 +570,8 @@ So, in probability, $\Sigma$ -measurable sets are called events.
     \item Measure Theory - Terrence Tao
     \item Probability and Measure - Patrick Billingsley
     \item Principles of Mathematical Analysis - Walter Rudin
+    \item Measure Theory and Probability Theory - Krishna B. Athreya and S.N.Lahiri
+    
 \end{itemize}
-
-
-
 
 \end{document}
