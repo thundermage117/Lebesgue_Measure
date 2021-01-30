@@ -15,19 +15,16 @@
 \begin{center}
     {\Large\bfseries\noindent Acknowledgement}
 \end{center}
+
 \hfill
 
-"It is not possible to prepare a report without the assistance of other people. This one is certainly no exception."
-\bigskip
+"It is not possible to prepare a report without the assistance of other people. This one is certainly no exception."\bigskip
 
-The completion of this report could not have been accomplished without the support of an outstanding group of people, and we would like to thank every one of them.
-\bigskip
+The completion of this report could not have been accomplished without the support of an outstanding group of people, and we would like to thank every one of them.\bigskip
 
-We would like to express our sincere and deep gratitude towards Lakshmi Burra Ma'am, who instilled in us the ability to develop analytical and abstract thinking. She, through her enthusiasm, has always encouraged and supported us. It's her constant and conscientious guidance, which has helped us complete this report.
-\bigskip
+We would like to express our sincere and deep gratitude towards Lakshmi Burra Ma'am, who instilled in us the ability to develop analytical and abstract thinking. She, through her enthusiasm, has always encouraged and supported us. It's her constant and conscientious guidance, which has helped us complete this report.\bigskip
 
-Our heartfelt thanks to our TAs, who have provided their invaluable assistance and advised us on every step of this report. 
-\bigskip
+Our heartfelt thanks to our TAs, who have provided their invaluable assistance and advised us on every step of this report. \bigskip
 
 We are also extremely grateful to our parents for their unfathomable moral support along the way and for educating us at the International Institute of Information Technology, Hyderabad, which has provided us the opportunity to write this report.
 \bigskip
@@ -57,15 +54,15 @@ The goal of this project is to investigate the Lebesgue measure and some of its 
 
 \section{Measure}
 
-How do we measure a set or an object? If we have a 3-dimensional object, we could find its volume in 2 different ways, we could fill the container with simple objects or $boxes$ and find their sum, or we could encase the whole container in a box and start chipping away smaller boxes. These approaches work only when our box measure is a properly defined measure. 
+How do we measure a set or an object? If we have a 3-dimensional object, we could find its volume in 2 different ways, we could fill the container with simple objects or $boxes$ and find their sum, or we could encase the whole container in a box and start chipping away smaller boxes. These approaches work only when our box measure is a properly defined measure.\medskip
 
-The mathematical concept of measure is a generalisation of length in $\mathbb{R}$, area in $\mathbb{R}^2$ or volume in $\mathbb{R}^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $\mathbb{R}^n$ we are using and $E \subset \mathbb{R}^n$.
+The mathematical concept of measure is a generalisation of length in $\mathbb{R}$, area in $\mathbb{R}^2$ or volume in $\mathbb{R}^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $\mathbb{R}^n$ we are using and $E \subset \mathbb{R}^n$.\medskip
 
-We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $\mathbb{R}^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant).
+We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $\mathbb{R}^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant).\medskip
 
-Here, we hit a roadblock in our definition of a measure, from our definition, we can see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A.
+Here, we hit a roadblock in our definition of a measure, from our definition, we can see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A. Also, if we consider the measure of a point to be zero, it is logical that a collection of points must measure zero and therefore all sets must have a zero measure.\medskip
  
- Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $\mathbb{R}^n$ applying all the above properties. 
+ Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $\mathbb{R}^n$ applying all the above properties.\medskip
  
  If we are developing a measure $m$ defined on the subsets of $\mathbb{R}$, we hope that these conditions are met:
  \begin{enumerate}
@@ -78,7 +75,7 @@ Here, we hit a roadblock in our definition of a measure, from our definition, we
      \item $m(A)=m(x+A)$, translation invariance, (location doesn't affect the length, so it shouldn't affect measure)
      \item $m(\bigcup_{1}^{\infty} {A_k}) = \sum_{1}^{\infty}m(A_k)$, for any mutually disjoint sequence $(A_k)$ of subsets of real numbers (countable additivity).
  \end{enumerate}
- Our goal is to construct a measure that satisfies as many conditions as possible.
+ Our goal is to construct a measure that satisfies as many conditions as possible, the alternative would be to define a measure only for specific sets.
  
  \subsection{Length of Intervals}
  
@@ -112,7 +109,7 @@ The length of an interval can not exceed the length of a $finite$ cover.
 
 \subsection{Proposition}
 
-If $I,I_1,I_2,\dots ,I_n$ are bounded open intervals with $ I \subset \bigcup I_k$, then $l(I) \leq \sum l(I_k)$. Also, $ l(I) \leq inf\{ \sum l(I_k) | I \subset \bigcup I_k, I_k \; bounded \; intervals \}$.
+If $I,I_1,I_2,\dots ,I_n$ are bounded open intervals with $ I \subset \bigcup I_k$, then $l(I) \leq \sum l(I_k)$. Also, $ l(I) \leq inf\{ \sum l(I_k) | I \subset \bigcup I_k, I_k \; bounded \; intervals \}$.\bigskip
 
 Proof: Assume $I =(a,b)$ and let $\epsilon > 0$. The intervals $(a-\epsilon,a+\epsilon),(b+\epsilon,b-\epsilon),I_1,\dots ,I_n$ form an open cover of the compact set $[a,b]$. And by Heine-Borel Theorem, a finite sub collection will cover [a,b] and thus (a,b).
 Using 1.1.6:
@@ -130,7 +127,9 @@ $$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \
 
 \subsection{Results}
 \begin{enumerate}
-    \item $m^*$ is a set function, whose domain is all subsets of $\mathbb{R}$, and range is $[0,\infty]$, the non-negative extended real numbers. Note that the Lebesgue Outer Measure is defined for every subset of $\mathbb{R}$.
+    \item $m^*$ is a set function, whose domain is all subsets of $\mathbb{R}$, and range is $[0,\infty]$, the non-negative extended real numbers. 
+    
+    \item The Lebesgue Outer Measure is defined for \textbf{every} subset of $\mathbb{R}$.
     
     \item Outer Measure is monotonic, i.e. , if $A \subseteq B$, then $m^*(A) \leq m^*(B)$, any cover of B by open intervals is also a cover of A, and the latter infimum is taken over a larger collection than the former. 
 
@@ -143,25 +142,27 @@ $$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \
 \subsection{Outer Measure of any interval is it's length}
 
 Proof:  
-For a closed interval [a,b], let $\epsilon >0$. Then $(a-\epsilon,b+\epsilon)$ covers $[a,b]$ and length of this interval is $b-a+\epsilon$. Since $\epsilon$ is arbitrary $m^*([a,b]) \leq b-a = l([a,b])$.
+For a closed interval [a,b], let $\epsilon >0$. Then $(a-\epsilon,b+\epsilon)$ covers $[a,b]$ and length of this interval is $b-a+\epsilon$. Since $\epsilon$ is arbitrary $m^*([a,b]) \leq b-a = l([a,b])$.\medskip
 
 Next let ${I_n}$ be a covering of [a,b] by bounded open intervals. By the Heine-Borel Theorem, there exists a finite subset A of $I_n$'s covering [a,b]. So $a \in I_1$ for some $I_1 =(a_1,b_1) \in A$. Also, if $b_1 \leq b$, then $b_1 \in I_2 $ for some $I_2 =(a_2,b_2) \in A$. Similarly we can construct $I_1,I_2,\dots,I_k$. Then
 $$ \sum l(I_n) \geq \sum_{i=1}^k l(I_i) = \sum_{i=1}^{k}(b_i - a_i)$$
 $$=(b_k-a_k) +(b_{k-1} -a_{k-1})+ \dots + (b_1 - a_1) $$
 $$ >b_k -a_1$$
-Since $a_1<a$ and $b_k>b$, then $ \sum l(I_n) > b_k -a_1 $. So, $m^*([a,b]) = b-a = l([a,b])$.
+Since $a_1<a$ and $b_k>b$, then $ \sum l(I_n) > b_k -a_1 $. So, $m^*([a,b]) = b-a = l([a,b])$.\medskip
 
 If I is an unbounded interval, then given any natural number $n \in N$, there is a closed interval $J \subset I$ with $l(J)=n$. Hence $m^*(I) \geq m^*(J) = l(J)=n$. Since $m^*(I) \geq n \, and \, n \in N$ is arbitrary, then $m^*(I)=\infty=l(I)$. 
 
 \subsection{Outer Measure is translation invariant}
-$m^*(A)=m^*(A+y)$
+$$m^*(A)=m^*(A+y)$$
 
-Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from Sec 2.5 $\sum l(I_n) < M+ \epsilon$, so if $y \in \mathbb{R}$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.
+Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from Sec 2.5 $\sum l(I_n) < M+ \epsilon$, so if $y \in \mathbb{R}$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.\medskip
 
-Now, let ${J_n}$ be a collection of bounded open intervals such that $\cup J_n \supset A+y $.Assume that $\sum l(J_n)< M$. Then ${J_n-y}$ is a covering of A and $\sum l(J_n-y)=\sum l(J_n) < M$, a contradiction. So, $\sum l(J_n) \geq M$ and hence $m^*(A)\geq M$. So $m^*(A)=m^*(A+y)=M$
+Now, let ${J_n}$ be a collection of bounded open intervals such that $\cup J_n \supset A+y $.Assume that $\sum l(J_n)< M$. Then ${J_n-y}$ is a covering of A and $\sum l(J_n-y)=\sum l(J_n) < M$, a contradiction. So, $\sum l(J_n) \geq M$ and hence $m^*(A)\geq M$. So $m^*(A)=m^*(A+y)=M$.\medskip
 
 Suppose $m^*(A)= \infty$.Then for any$\{I_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A \subset \cup I_n$, we must
-have$\sum l(I_n) =\infty$ .Consider A+y. For any $\{J_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A+y \subset \cup J_n$, the collection $\{J_n - y\}_{n=1}^{\infty} $ is a set of bounded open intervals such that $A+y \subset \cup J_n -y$. So $\sum l(J_n - y) =\infty$. But l($J_n$) =l($J_n - y$), so we must have $\sum l(J_n) =\infty$. Since $\{J_n\}_{n=1}^{\infty} $ is an arbitrary collection of bounded open intervals covering A+y, we must have $m^*(A)=m^*(A+y)= \infty$. 
+have$\sum l(I_n) =\infty$. Consider A+y. For any $\{J_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A+y \subset \cup J_n$, the collection $\{J_n - y\}_{n=1}^{\infty} $ is a set of bounded open intervals such that $A+y \subset \cup J_n -y$. \smallskip
+
+So $\sum l(J_n - y) =\infty$. But l($J_n$) =l($J_n - y$), so we must have $\sum l(J_n) =\infty$. Since $\{J_n\}_{n=1}^{\infty} $ is an arbitrary collection of bounded open intervals covering A+y, we must have $m^*(A)=m^*(A+y)= \infty$. 
 
 \subsection{Outer Measure is countably sub-additive}
 
@@ -187,7 +188,9 @@ As seen in Sec.3.3 $[0,1]$ has an outer measure of 1, whereas all countable sets
 
 \section{$\sigma$-Algebra of Lebesgue Measurable sets}
 
-Unfortunately the outer measure fails to be countably additive on all subsets of $\mathbb{R}$, it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905. However, we can salvage matters by measuring a certain class of sets in $\mathbb{R}$, henceforth called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
+Unfortunately the outer measure fails to be countably additive on all subsets of $\mathbb{R}$, it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905 (Refer to Sec. result 2 of 3.2 \& 5.3).\smallskip
+
+However, we can salvage matters by measuring a certain class of sets in $\mathbb{R}$, henceforth called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
 
 \subsection{Carathedory's Measurability Criteria}
 
@@ -231,20 +234,20 @@ If $\Sigma$ is a $\sigma$-algebra on $\Omega$, and A$_1$, A$_2$, A$_3$,....A$_n$
 
 
 \subsubsection{Proposition 2}
-If $\Sigma$ is a $\sigma$-algebra on $\Omega$ and A, B $\in$ $\Sigma$, then A$\setminus$B = A - B $\in$ $\Sigma$.
+If $\Sigma$ is a $\sigma$-algebra on $\Omega$ and A, B $\in$ $\Sigma$, then A$\setminus$B = A - B $\in$ $\Sigma$.\medskip
 
 \textbf{Proof: }If B $\in$ $\Sigma$, then B$^c$ $\in$ $\Sigma$ by  \textit{property 2}. So, A $\cap$ B$^c$ = A$\setminus$B $\in$ $\Sigma$ (As seen in proposition 1).
 
 
 \subsubsection{Proposition 3}
-If $\Sigma_i$ is a $\sigma$-algebra on $\Omega$, i $\in \mathbb{N}$, then $\bigcap\limits_{i=1}^n$ $\Sigma_i$ is also a $\sigma$-algebra on $\Omega$.
+If $\Sigma_i$ is a $\sigma$-algebra on $\Omega$, i $\in \mathbb{N}$, then $\bigcap\limits_{i=1}^n$ $\Sigma_i$ is also a $\sigma$-algebra on $\Omega$.\medskip
 
 \textbf{Proof: }Consider the $\sigma$-algebras $\Sigma_1$, $\Sigma_2$, $\Sigma_3$,... $\Sigma_n$ defined on $\Omega$, then the smallest intersection of all such $\sigma$-algebras would be \{$\phi$, $\Omega$\}, which is a $\sigma$-algebra by definition. Also, if A is an element of the intersection, then A$^c$ would also be an element of the intersection, which satisfies \textit{property 2}. Also, A $\cup$ A$^c$ = $\Omega$ $\in$ $\Sigma$ which satisfies properties 1 and 3.
 
 
 
 \subsubsection{Proposition 4}
-For $Y$ $\subseteq$ P($\Omega$), there exists a smallest $\sigma$-algebra that contains $Y$, called the $\sigma$-algebra generated by $Y$, given by the intersection of all such $\sigma$-algebras $\Sigma$ such that $\Sigma \supseteq Y$. That is, $\sigma$($Y$) = $\bigcap\limits_{\Sigma \supseteq Y}\Sigma$.
+For $Y$ $\subseteq$ P($\Omega$), there exists a smallest $\sigma$-algebra that contains $Y$, called the $\sigma$-algebra generated by $Y$, given by the intersection of all such $\sigma$-algebras $\Sigma$ such that $\Sigma \supseteq Y$. That is, $\sigma$($Y$) = $\bigcap\limits_{\Sigma \supseteq Y}\Sigma$.\bigskip
 
 \textbf{Proof: }Consider $\sigma$-algebras $\Sigma_1$, $\Sigma_2$, $\Sigma_3$,....  $\Sigma_n$ $\supseteq $ $Y$ defined on $\Omega$. Then $\bigcap\limits_{i=1}^n \Sigma_i \supseteq Y$. As $Y \in$ $\Sigma_i$, $Y^c \in \Sigma_i$ for i = 1, 2, 3...n which satisfies \textit{property 2}. Furthermore, $\Omega$ $\in \Sigma_i$ which satisfies \textit{property 1}. $Y \cup Y^c$ = $\Omega$ which satisfies \textit{property 3}. Hence $\sigma(Y)$ is a $\sigma$-algebra.
 
@@ -252,6 +255,7 @@ For example, consider $\Omega$ = \{1, 2, 3, 4\} and $Y$ = \{\{1\}, \{2\}\}. Then
 
 \subsection{Every interval is measurable}
 From the preceding propositions, we immediately conclude that the collection of measurable sets is a $\sigma$-algebra. Also, Lebesgue outer measure $m^*$, written as $m$ when restricted to the $\sigma$-algebra $E$ subsets of $R$ satisfying Carathedory's condition, is countably additive on $E$, in other words, $m$ is countably additive on Lebesgue measurable subsets of R.
+\medskip
 
 It can further be shown Intervals satisfy Caratheodory's condition, using the Heine-Borel theorem. But we can use Borel sets to extend our applicability of Lebesgue measure to a much larger group of subsets.
 
@@ -390,15 +394,15 @@ These Lebesgue measurable sets form a $\sigma$-algebra, and the Lebesgue measure
 \end{itemize}
 
 \subsection{Banach-Tarski Paradox}
-Banach-Tarski paradox is a famous example to be demonstrated here, the Banach-Tarski theorem tells us that given a sphere in 3-dimensional space, there exists a decomposition of the ball into a number of finite number of disjoint subsets, which can be put back in a different way to yield two identical copies of the original sphere. This can be done using as few as 5 pieces.
+Banach-Tarski paradox is a famous example to be demonstrated here, the Banach-Tarski theorem tells us that given a sphere in 3-dimensional space, there exists a decomposition of the ball into a number of finite number of disjoint subsets, which can be put back in a different way to yield two identical copies of the original sphere. This can be done using as few as 5 pieces.\medskip
 
 The reason this theorem is called a paradox is that it contradicts our intuition about volume.
 
 While the reassembly process involves only moving the pieces around and rotating them without changing their shape which are closed under the Lebesgue measure, some of the five or more sets in which you divide the sphere are not Lebesgue measurable.
 
-Unlike most theorems in geometry, the proof for the Banach-Tarski theorem itself requires using the axiom of choice, which allows the construction of non-measurable sets.
+Unlike most theorems in geometry, the proof for the Banach-Tarski theorem itself requires using the axiom of choice, which allows the construction of non-measurable sets.\medskip
 
-As some of the sets are non-measurable, it's not possible to define a volume to such sets as seen before. It is therefore absurd to add these 'volumes' in order to double their initial volume. However note that the initial sphere and the final spheres obtained are measurable.
+As some of the sets are non-measurable, it's not possible to define a volume to such sets as seen before. It is therefore absurd to add these 'volumes' in order to double their initial volume. However, note that the initial sphere and the final spheres obtained are measurable.
 
 \section{Probability and Measures}
 
@@ -426,8 +430,8 @@ So an outcome is nothing but an element of the sample space.
 Observe that in probability outcome is the source of randomness and is not of our control in a random experiment.
 \bigskip
 
-NOTE - The sample space of an experiment can be countable or uncountable. The sample space of an experiment like tossing a coin n times is countable with 2$^{n}$ outcomes whereas if we want to determine the speed with which the coin tossed would land back is a set of positive real numbers and the sample space would be uncountable. Another example of uncountable sample space could be the set of all points on the circumference of a circle.
-\
+NOTE - The sample space of an experiment can be countable or uncountable. The sample space of an experiment like tossing a coin n times is countable with 2$^{n}$ outcomes whereas if we want to determine the speed with which the coin tossed would land back is a set of positive real numbers and the sample space would be uncountable. Another example of uncountable sample space could be the set of all points on the circumference of a circle.\bigskip
+
 One more thing to discuss before going ahead is that often while discussing probability theory, we are not interested in a particular outcome but a subset of the sample space. For example - when a dice is rolled, we might be interested if the outcome is an even number $\{2,4,6\}$ or a prime number $\{2,3,5\}$ rather than the outcome being a particular number like 2 or 5.
 
 \subsection{Events and event space}
