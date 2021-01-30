@@ -1,7 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amssymb,mathrsfs}
-
+\usepackage{amssymb,mathrsfs,amsmath}
 
 \title{\textbf{Lebesgue Measure}}
 \author{Abhinav Siddharth \and Akshit Gureja \and Jewel Benny}
@@ -543,6 +542,59 @@ So, in probability, $\Sigma$ -measurable sets are called events.
 	$$P(E) = 1 - P(E^c) = 1 - \lim_{n \rightarrow \infty}P(E_n^c) = \lim_{n \rightarrow \infty}(1- P(E_n^c)) = \lim_{n \rightarrow \infty}P(E_n)$$
 
 \end{enumerate}
+
+\section{Lebesgue Integration}
+
+The Lebesgue integral is a powerful tool, and is a further extension of the Lebesgue measure, which can be used to integrate more functions when compared to the Riemann integral or even the Riemann–Stieltjes integral. 
+This integral plays an important role in probability theory.
+
+The Lebesgue integral approximates the area under a curve using horizontal strips, or using the measure of an interval whereas the Riemann integral uses vertical strips.
+
+This topic will not be covered in full, as it requires a deeper discussion into Measurable functions, but we can see some applications of the integral.
+
+\subsection{Explanation}
+
+\begin{center}
+    "I have to pay a certain sum, which I have collected in my pocket. I take the bills and coins out of my pocket and give them to the creditor in the order I find them until I have reached the total sum. This is the Riemann integral. But I can proceed differently. After I have taken all the money out of my pocket I order the bills and coins according to identical values and then I pay the several heaps one after the other to the creditor. This is my integral."
+\end{center}
+
+This explanation was given by Henri Lebesgue himself, it is futile to attempt for a better one.
+
+\subsection{Simple Functions}
+As the name suggests, a simple function is a function that takes on only finitely many distinct values. 
+
+Example: The Dirichlet function over the real line takes the value 1 if $x$ is rational, 0 otherwise.
+
+A simple function can be written as a linear combination of indicator functions of sets, such as
+$$f = c_1\chi A_1 +c_2\chi A_2+\dots+c_n\chi A_n$$
+Where the indicator function denotes whether or not a element is present in the given set.
+
+\subsection{Lebesgue Integral}
+The Lebesgue integral for a simple function defined above is:
+$$ \int_{\mathbb{R}} fd{\lambda}=c_1\lambda (A_1)+c_2\lambda (A_2)+\dots+c_n\lambda (A_n)$$
+Here, $\lambda(A)$ denotes the Lebesgue measure.
+
+If $f$ takes on both positive and negative values, the integral can be evaluated separately for each part.
+
+Finally, the Lebesgue integral of an arbitrary function $f$ is defined by considering approximations of simple functions.
+\[ \int_{\mathbb{R}} fd{\lambda}= \sup\limits_{g \leq f \;:\; g \,simple} \int_{\mathbb{R}} gd{\lambda}\]
+
+\subsection{Properties}
+
+
+\subsection{Example}
+The Dirichlet function,
+
+\[ 1_{\mathbb{Q}}(x)=\begin{cases} 
+    1 , x \;is\; rational \\
+    0 , x \;is\; not\; rational
+   \end{cases}
+\]
+ It is nowhere continuous, and not Riemann-integrable.\medskip
+ 
+ The Dirichlet function is Lebesgue-integrable on $\mathbb{R}$ and its integral over $\mathbb{R}$ is zero, as the measure of rational numbers is 0.
+
+
 
 \newpage
 \begin{center}
