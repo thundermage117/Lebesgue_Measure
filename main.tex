@@ -1,14 +1,33 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,mathrsfs,amsmath}
-
-\title{\textbf{Lebesgue Measure}}
-\author{Abhinav Siddharth \and Akshit Gureja \and Jewel Benny}
-\date{January 2021}
-
+\usepackage{graphicx}
 \begin{document}
+\begin{titlepage}
 
-\maketitle
+\centering
+\vfill
+\includegraphics{iiit}
+\vskip2cm
+
+{\bfseries\Large
+        Real Analysis MA4.101\\
+        \vskip2cm
+        Lebesgue Measure\\
+        \vskip3cm
+       GROUP 19 B2}\\
+        \vskip 1cm
+{\bfseries        Abhinav Siddharth (2020112007)\\
+        \vskip 0.5cm
+        Akshit Gureja (2020112004)\\
+        \vskip 0.5cm
+        Jewel Benny (2020102057)}
+    
+
+
+\end{titlepage}
+
+
 
 \newpage
 \begin{center}
@@ -489,9 +508,8 @@ So a probability measure is a special case of finite measure with the measure of
 
 A probability measure on S can be expressed on $X$ as
 $$P(A) = \frac{\mu(A)}{\mu(X)}, \ A \in \Sigma$$
-Where $0 < \mu(\Sigma) < \infty$ is a measure.
-\newline
-\newline
+Where $0 < \mu(\Sigma) < \infty$ is a measure.\medskip
+
 Consider that $m$ is a Lebesgue measure on $\mathbb{R}^n$. If $X \subseteq  \mathbb{R}^n$ and $0 < m(X) < \infty$ , then
 $$P(A) = \frac{m(A)}{m(X)}\,, \ A \subseteq X$$
 Then we can define a probability measure($P$) on ($\Omega$, $\Sigma$) as a function $P$: $\Sigma$ $\rightarrow$ [0,1] such that -
@@ -525,8 +543,9 @@ So, in probability, $\Sigma$ -measurable sets are called events.
     \item if $A=B$, then $P(A) = P(B)$
     \item Monotonicity: if $A \subset B \Rightarrow P(A) \le P(B)$
     \item $P(B\cap A^{c}) = P(B) - P(A\cap B)$
-    \item $P(A\cup B) = P(A) + P(B) - P(A\cap B)$
-    \newline \newline In general, by the inclusion-exclusion principle,
+    \item $P(A\cup B) = P(A) + P(B) - P(A\cap B)$\medskip
+    
+    In general, by the inclusion-exclusion principle,
     $$P(\bigcup \limits_{i=1}^nA_i) = \sum \limits_iP(A_i) - \sum \limits_{i<j}P(A_i \cap A_j)$$ 
     $$ + \sum \limits_{i<j<k}P(A_i \cap A_j \cap A_k) + ....(-1)^{n+1}P(A_1 \cap A_2 \cap A_3....\cap A_n)$$
     \item Finite additivity:\hfill If $A_{1}, A_{2} ... A_{n} \epsilon \Sigma$ and suppose they are disjoint. Then,
