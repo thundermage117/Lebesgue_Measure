@@ -602,12 +602,17 @@ As the name suggests, a simple function is a function that takes on only finitel
 Example: The Dirichlet function over the real line takes the value 1 if $x$ is rational, 0 otherwise.
 
 A simple function can be written as a linear combination of indicator functions of sets, such as
-$$f = c_1\chi A_1 +c_2\chi A_2+\dots+c_n\chi A_n$$
-Where the indicator function denotes whether or not a element is present in the given set.
-
+$$f = c_1\chi_{A_1} +c_2\chi_{A_2}+\dots+c_n\chi_{A_n}$$
+$$f = \sum \limits_{i=1}^nc_i\chi_{A_i}$$
+Where the indicator function $\chi_A$ denotes whether or not a element is present in the given set.
+$$\chi_A(x)=\begin{cases} 
+    1 ,\ x \in A \\
+    0 ,\ x \notin A
+   \end{cases}$$
 \subsection{Lebesgue Integral}
 The Lebesgue integral for a simple function defined above is:
 $$ \int_{\mathbb{R}} fd{\lambda}=c_1\lambda (A_1)+c_2\lambda (A_2)+\dots+c_n\lambda (A_n)$$
+$$ \int_{\mathbb{R}} fd{\lambda}=\sum \limits_{i=1}^n c_i\lambda (A_i)$$
 Here, $\lambda(A)$ denotes the Lebesgue measure.
 
 If $f$ takes on both positive and negative values, the integral can be evaluated separately for each part.
@@ -625,6 +630,7 @@ Finally, the Lebesgue integral of an arbitrary function $f$ is defined by consid
     \item Monotonicity, if $f\leq g$,
     
     $$\int f d\lambda \leq \int g d\lambda$$
+    \item$$|{\int fd\lambda}| \leq \int |f|d\lambda$$ 
     \item Monotone Convergence Theorem, Suppose $\{ k_n\}_{k \in \mathbb{N}} $is a sequence of non-negative measurable functions such that
     $f_{k}(x) \leq f_{k+1}(x) \forall k \in \mathbb{N}.$
     
