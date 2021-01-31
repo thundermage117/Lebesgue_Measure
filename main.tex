@@ -448,7 +448,7 @@ For example:
 \end{enumerate}
 
 
-In probability theory, an outcome is denoted by $\omega$ and from the definition of the sample space we can say that $\omega$ $\epsilon$ $\Omega$.
+In probability theory, an outcome is denoted by $\omega$ and from the definition of the sample space we can say that $\omega$ $\in$ $\Omega$.
 So an outcome is nothing but an element of the sample space.
 
 Observe that in probability outcome is the source of randomness and is not of our control in a random experiment.
@@ -462,15 +462,15 @@ One more thing to discuss before going ahead is that often while discussing prob
 The subset of the sample space $\Omega$ which is of our interest is referred to as an event. The subset is referred to as an event space.
 We understand by taking an example of coin tossed thrice and our outcome being at least 2 tails, so our event space is $\{TTH, HTT, THT, TTT\}$ which as we stated is a subset of a sample space. 
 
-We say that an event P $\subseteq$ $\Omega$ has occurred or taken place iff $\omega$ $\epsilon$ P.
+We say that an event $E$ $\subseteq$ $\Omega$ has occurred or taken place iff $\omega$ $\in$ $E$.
 
 \subsection{Algebra and probability theory}
 
 Now, before writing down everything mathematically, lets discuss how we are going to link the two concepts.
 
-If we say that an event P is in our interest we can always say that the non-occurrence of P would interest us. Thus P$^{c}$, that is the complement of P also would interest us.
+If we say that an event $E$ is in our interest we can always say that the non-occurrence of $E$ would also interest us. Thus $E^{c}$, that is the complement of $E$ also would interest us.
 
-If two events M and N are of our interest, then the event M$\cup$N is also of our interest as  M$\cup$N will have our favourable outcome.
+If two events $M$ and $N$ are of our interest, then the event $M\cup N$ is also of our interest as  $M\cup N$ will have our favourable outcome.
 
 Also when any outcome is obtained, the $\Omega$ has always occurred and thus always interests us.
 
@@ -485,13 +485,12 @@ We denote the sample space by $\Omega$, the $\sigma$-algebra(the collection of s
 Probability is a special case of Measure theory and we'll see how.
 \bigskip
 
-Like measure is the function $\mu$ : $\Sigma$ $\rightarrow$ [0, $\infty$], such that-
+Measure is a function $\mu$ : $\Sigma$ $\rightarrow$ [0, $\infty$], such that
 \begin{enumerate}
     \item $\mu(\phi)$ = 0
-    \item If $A_{1}, A_{2} ,A_{3} ....$ are a countable collection of disjoint measurable sets, then  $$\mu(\bigcup_{1}^{\infty} {A_k}) = \sum_{1}^{\infty}\mu(A_k).$$ This is referred to as the countable additivity axiom.
+    \item If $A_{1}, A_{2} ,A_{3} ....$ are a countable collection of disjoint measurable sets, then  $$\mu(\bigcup_{i=1}^{\infty} {A_i}) = \sum_{i=1}^{\infty}\mu(A_i).$$ This is referred to as the countable additivity axiom.
 \end{enumerate}
-
-Measure is nothing but a mapping of the subsets included in $\Sigma$ to [0, $\infty$].
+So a measure is nothing but a mapping of the subsets included in $\Sigma$ to [0, $\infty$].
 \bigskip
 
 We say that
@@ -501,22 +500,23 @@ We say that
     \item If $\mu(\Omega)$ =  1 , $\mu$ is called a probability measure.
 \end{enumerate}
 
-So a probability measure is a special case of finite measure with the measure of the $\Omega$ being 1.
+So a probability measure is a special case of finite measure with the measure of $\Omega$ being 1.
 \bigskip
 
 \subsection{Probability Measure}
 
 A probability measure on S can be expressed on $X$ as
-$$P(A) = \frac{\mu(A)}{\mu(X)}, \ A \in \Sigma$$
-Where $0 < \mu(\Sigma) < \infty$ is a measure.\medskip
+$$P(A) = \frac{\mu(A)}{\mu(X)}, \ A \in X$$
+Where $0 < \mu(X) < \infty$ is a measure.\medskip
 
-Consider that $m$ is a Lebesgue measure on $\mathbb{R}^n$. If $X \subseteq  \mathbb{R}^n$ and $0 < m(X) < \infty$ , then
+Consider that $m$ is a Lebesgue measure on $\mathbb{R}^n$. If $X \subseteq  \mathbb{R}^n$ and $0 < m(X) < \infty$, then
 $$P(A) = \frac{m(A)}{m(X)}\,, \ A \subseteq X$$
 Then we can define a probability measure($P$) on ($\Omega$, $\Sigma$) as a function $P$: $\Sigma$ $\rightarrow$ [0,1] such that -
 \begin{enumerate}
     \item $P(\phi)$ = 0
     \item $P(\Sigma)$ = 1
-    \item If $A_{1}, A_{2} .... $ are $\Sigma$ measurable sets then $P(\bigcup_{1}^{\infty} {A_k}) = \sum_{1}^{\infty}P(A_k)$.
+    \item If $A_{1}, A_{2} .... $ are disjoint $\Sigma$ measurable sets, then
+    $$P(\bigcup_{i=1}^{\infty} {A_i}) = \sum_{i=1}^{\infty}P(A_i)$$
 \end{enumerate}
 
 \subsection{Probability Space}
@@ -548,7 +548,7 @@ So, in probability, $\Sigma$ -measurable sets are called events.
     In general, by the inclusion-exclusion principle,
     $$P(\bigcup \limits_{i=1}^nA_i) = \sum \limits_iP(A_i) - \sum \limits_{i<j}P(A_i \cap A_j)$$ 
     $$ + \sum \limits_{i<j<k}P(A_i \cap A_j \cap A_k) + ....(-1)^{n+1}P(A_1 \cap A_2 \cap A_3....\cap A_n)$$
-    \item Finite additivity:\hfill If $A_{1}, A_{2} ... A_{n} \epsilon \Sigma$ and suppose they are disjoint. Then,
+    \item Finite additivity:\hfill If $A_{1}, A_{2} ... A_{n} \ \in \ \Sigma$ and suppose they are disjoint. Then,
     $$P(\bigcup_{1}^{n} {A_k}) = \sum_{1}^{n}P(A_k)$$
 \end{enumerate}
 \subsection{Propositions}
@@ -565,6 +565,17 @@ So, in probability, $\Sigma$ -measurable sets are called events.
 	So, from proposition 1,
 	$$P(E^c) = \lim_{n \rightarrow \infty}P(E_n^c)$$
 	$$P(E) = 1 - P(E^c) = 1 - \lim_{n \rightarrow \infty}P(E_n^c) = \lim_{n \rightarrow \infty}(1- P(E_n^c)) = \lim_{n \rightarrow \infty}P(E_n)$$
+	\item If $E_1, E_2, E_3,....$ are events and $E = \bigcup \limits_{i=1}^\infty E_i$, then 
+	$$P(E) \leq \sum \limits_{i=1}^\infty P(E_i)$$
+	\textbf{Proof: }Let $F_1 = E_1$ and $F_n = E_n - (\bigcup \limits_{i=1}^{n-1}E_i)$. Then, $F_j \cap F_k = \phi $ for all $j \neq k$. Then
+	$$E = \bigcup \limits_{i=1}^\infty F_i$$
+	And by countable additivity
+	$$P(E) = \sum \limits_{i=1}^\infty P(F_i)$$
+	Since $F_i \subseteq E_i$, $P(F_i) \leq P(E_i)$
+	$$\sum \limits_{i=1}^\infty P(F_i) \leq \sum \limits_{i=1}^\infty P(E_i)$$
+	Then
+	$$P(E) \leq \sum \limits_{i=1}^\infty P(E_i)$$
+	
 
 \end{enumerate}
 
