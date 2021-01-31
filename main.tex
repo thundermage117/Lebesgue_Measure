@@ -556,7 +556,7 @@ This integral plays an important role in probability theory.
 
 The Lebesgue integral approximates the area under a curve using horizontal strips, or using the measure of an interval whereas the Riemann integral uses vertical strips.
 
-This topic will not be covered in full, as it requires a deeper discussion into Measurable functions, but we can see some applications of the integral.
+This topic will not be covered in full, as it requires a deeper discussion into Measurable functions and sequences of functions, but we can see some applications of the integral.
 
 \subsection{Explanation}
 
@@ -586,6 +586,27 @@ Finally, the Lebesgue integral of an arbitrary function $f$ is defined by consid
 \[ \int_{\mathbb{R}} fd{\lambda}= \sup\limits_{g \leq f \;:\; g \,simple} \int_{\mathbb{R}} gd{\lambda}\]
 
 \subsection{Properties}
+
+\begin{itemize}
+    \item     If f, g are functions such that $f = g$ almost everywhere, then $f$ is Lebesgue integrable iff $g$ is Lebesgue integrable, and the integrals of $f$ and $g$ are the same if they exist.
+    \item Linearity,
+    
+    $$\int (c_1f+c_2g )d\lambda= c_1 \int f d\lambda+ c_2 \int g d\lambda$$
+    \item Monotonicity, if $f\leq g$,
+    
+    $$\int f d\lambda \leq \int g d\lambda$$
+    \item Monotone Convergence Theorem, Suppose $\{ k_n\}_{k \in \mathbb{N}} $is a sequence of non-negative measurable functions such that
+    $f_{k}(x) \leq f_{k+1}(x) \forall k \in \mathbb{N}.$
+    
+    Then, the limit $f$ of $f_k$ is Lebesgue measurable and
+    \[ \lim_{k} \int f_k d\lambda = \int f d\lambda\]
+    
+    \item Dominated Convergence Theorem,  If $|f_n| \leq g$ for an integrable function $g$, and $f_n \to f$, then
+    $$ \lim_{n}\int f_n d\lambda =\int f d\lambda$$
+\end{itemize}
+The Riemann integral does not work well with taking limits of sequences of functions. 
+
+The Lebesgue integral is better able to describe how and when it is possible to take limits under the integral sign (via the monotone convergence theorem and dominated convergence theorem). This is important in the study of Fourier series, Fourier transforms, and other topics. 
 
 
 \subsection{Example}
