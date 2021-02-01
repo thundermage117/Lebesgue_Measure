@@ -41,7 +41,7 @@
 
 The completion of this report could not have been accomplished without the support of an outstanding group of people, and we would like to thank every one of them.\bigskip
 
-We would like to express our sincere and deep gratitude towards Lakshmi Burra Ma'am, who instilled in us the ability to develop analytical and abstract thinking. She, through her enthusiasm, has always encouraged and supported us. It's her constant and conscientious guidance, which has helped us complete this report.\bigskip
+We would like to express our sincere and profound gratitude towards Lakshmi Burra Ma'am, who instilled in us the ability to develop analytical and abstract thinking. She, through her enthusiasm, has always encouraged and supported us. It's her constant and conscientious guidance, which has helped us complete this report.\bigskip
 
 Our heartfelt thanks to our TAs, who have provided their invaluable assistance and advised us on every step of this report. \bigskip
 
@@ -59,9 +59,9 @@ We have no words to express our thanks for the valuable support and guidance we 
     {\Large\bfseries\noindent Abstract}
 \end{center}
 
-Through this paper, we introduce the concept of Measure Theory, Lebesgue Measure and its applications in the field of probability.\bigskip
+This report introduces the concept of Measure Theory, Lebesgue measure, and its applications in the field of probability.\bigskip
 
-We shall build our Lebesgue Measure from ground up intuitively. While this paper is not a detailed discussion on the topic, we will use known concepts where required hence retaining the readers' interest.\bigskip
+We shall build our Lebesgue Measure from the ground up intuitively. While this paper is not a detailed discussion on the topic, we will use known concepts where required to retain the readers' interest.\bigskip
 
 The report opens up with the discussion on Measure and its properties. They are followed by short sections about some fundamental theorem and outer measures.\bigskip
 
@@ -77,7 +77,7 @@ Next in the report, we will come across the application of the Lebesgue Measure 
 \newpage
 
 \section{Introduction}
-The goal of this project is to investigate the Lebesgue measure and some of its applications in probability measure. 
+This report aims to investigate the Lebesgue measure and some of its applications in probability measure. 
 
 \section{Measure}
 
@@ -85,11 +85,11 @@ How do we measure a set or an object? If we have a 3-dimensional object, we coul
 
 The mathematical concept of measure is a generalisation of length in $\mathbb{R}$, area in $\mathbb{R}^2$ or volume in $\mathbb{R}^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $\mathbb{R}^n$ we are using and $E \subset \mathbb{R}^n$.\medskip
 
-We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure to be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $\mathbb{R}^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant).\medskip
+We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $\mathbb{R}^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant).\medskip
 
-Here, we hit a roadblock in our definition of a measure, from our definition, we can see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A. Also, if we consider the measure of a point to be zero, it is logical that a collection of points must measure zero and therefore all sets must have a zero measure.\medskip
+Here, we hit a roadblock in our definition of a measure. From our definition, we can see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A. Also, if we consider the measure of a point to be zero, it is logical that a collection of points must measure zero, and therefore, all sets must have a zero measure.\medskip
  
- Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact, because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $\mathbb{R}^n$ applying all the above properties.\medskip
+ Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $\mathbb{R}^n$ applying all the above properties.\medskip
  
  If we are developing a measure $m$ defined on the subsets of $\mathbb{R}$, we hope that these conditions are met:
  \begin{enumerate}
@@ -159,9 +159,9 @@ $$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \
     
     \item The Lebesgue Outer Measure is defined for \textbf{every} subset of $\mathbb{R}$.
     
-    \item Outer Measure is monotonic, i.e. , if $A \subseteq B$, then $m^*(A) \leq m^*(B)$, any cover of B by open intervals is also a cover of A, and the latter infimum is taken over a larger collection than the former. 
+    \item Outer Measure is monotonic, i.e., if $A \subseteq B$, then $m^*(A) \leq m^*(B)$, any cover of B by open intervals is also a cover of A, and the latter infimum is taken over a larger collection than the former. 
 
-    \item If $(I_k)$ is any countable cover of A by open intervals, since infimum is a lower bound,$$ 0 \leq m^*(A) \leq \sum l(I_k)$$
+    \item If $(I_k)$ is any countable cover of A by open intervals since infimum is a lower bound,$$ 0 \leq m^*(A) \leq \sum l(I_k)$$
     
 
 
@@ -169,11 +169,11 @@ $$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \
 
 \subsection{Jordan Measure}
 
-If we had approximated the length of a set A by using covers by finite sets of intervals then we would have gotten Jordan outer measure instead of the Lebesgue outer measure. 
+If we had approximated the length of a set A by using covers by finite sets of intervals, then we would have gotten Jordan outer measure instead of the Lebesgue outer measure. 
 
 We could show that the Jordan outer measure of $ \mathbb{Q} \cap[0,1]$ is 1 even though the Jordan outer measure of any point, or any finite set of points, is 0. Therefore it isn't countably sub-additive, more importantly not defined for many sets, limiting the usage of the Jordan measure.
 
-\subsection{Outer Measure of any interval is it's length}
+\subsection{Outer Measure of any interval is its length}
 
 Proof:  
 For a closed interval [a,b], let $\epsilon >0$. Then $(a-\epsilon,b+\epsilon)$ covers $[a,b]$ and length of this interval is $b-a+\epsilon$. Since $\epsilon$ is arbitrary $m^*([a,b]) \leq b-a = l([a,b])$.\medskip
@@ -203,7 +203,7 @@ So $\sum l(J_n - y) =\infty$. But l($J_n$) =l($J_n - y$), so we must have $\sum 
 That is, if $\{E_k\}_{k=1}^{\infty} $ is any countable collection of sets, then
 $$ m^*(\bigcup_{k=1}^{\infty} E_k) \leq \sum_{k=1}^{\infty} m^{*}(E_k)$$
 
-Proof: If one of the $E_k$'s has infinite outer measure, the inequality holds trivially. We therefore suppose each of the $E_k$'s has finite outer measure. Let $\epsilon > 0$. For each natural number k, there is a countable collection $\{ I_{k,i} \}_{i=1}^{\infty}$ of open bounded intervals for which
+Proof: If one of the $E_k$'s has an infinite outer measure, the inequality holds trivially. We, therefore, suppose each of the $E_k$'s has a finite outer measure. Let $\epsilon > 0$. For each natural number k, there is a countable collection $\{ I_{k,i} \}_{i=1}^{\infty}$ of open bounded intervals for which
 $$ E_k \subseteq \bigcup_{i=1}^{\infty} \{ I_{k,i} \} \; and \; \sum_{i=1}^{\infty} l(I_{k,i}) < m^{*}(E_k) +\frac{\epsilon}{2^k}  $$
 
 Now, $\{I_{k,i}\}_{1 \leq k , i \leq \infty}$ is a countable collection of open, bounded intervals that covers $\cup_{k=1}^{\infty} E_k$: the collection is countable since it is a countable collection of countable collections. Thus,
@@ -225,13 +225,13 @@ This inequality holds for all $\epsilon>0$. Hence $m^*(C)=0$.
 
 \subsubsection{$[0,1]$ is not countable}
 
-As seen in Sec.3.3 $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0, therefore $[0,1]$ is not countable.
+As seen in Sec.3.3,  $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0. Therefore $[0,1]$ is not countable.
 \newpage
 \section{$\sigma$-Algebra of Lebesgue Measurable sets}
 
-Unfortunately the outer measure fails to be countably additive on all subsets of $\mathbb{R}$, it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905 (Refer to Sec. result 2 of 3.2 \& 5.3).\smallskip
+Unfortunately, the outer measure fails to be countably additive on all subsets of $\mathbb{R}$, and it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905 (Refer to Sec. result 2 of 3.2 \& 5.3).\smallskip
 
-However, we can salvage matters by measuring a certain class of sets in $\mathbb{R}$, henceforth called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
+However, we can salvage matters by measuring a particular class of sets in $\mathbb{R}$, hereafter called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
 
 \subsection{Carathedory's Measurability Criteria}
 
@@ -242,9 +242,9 @@ for every set X of real numbers, then the set E is said to be Lebesgue Measurabl
 
 \subsection{Results}
 \begin{enumerate}
-    \item Any set of outer measure is measurable, in other words, any countable set is measurable.
+    \item Any set of outer measure is measurable. In other words, any countable set is measurable.
     \item The union of a finite collection of measurable sets is measurable. This can be inferred using set identities and finite sub-additivity property of outer measure, then applying induction.
-    \item The union of countable collection of measurable sets is measurable.
+    \item The union of a countable collection of measurable sets is measurable.
 \end{enumerate}
 
 \subsection{$\sigma$-Algebra}
@@ -295,7 +295,7 @@ For $Y$ $\subseteq$ P($\Omega$), there exists a smallest $\sigma$-algebra that c
 For example, consider $\Omega$ = \{1, 2, 3, 4\} and $Y$ = \{\{1\}, \{2\}\}. Then the smallest $\sigma$-algebra on $\Omega$ containing $Y$ is $\sigma(Y)$ = \{$\phi$, \{1\}, \{2\}, \{1, 2\}, \{3, 4\}, \{1, 3, 4\}, \{2, 3, 4\}, $\Omega$\}. Also note that if $Y$ is a $\sigma$-algebra, then $\sigma(Y)$ = $Y$.
 
 \subsection{Every interval is measurable}
-From the preceding propositions, we immediately conclude that the collection of measurable sets is a $\sigma$-algebra. Also, Lebesgue outer measure $m^*$, written as $m$ when restricted to the $\sigma$-algebra $E$ subsets of $R$ satisfying Carathedory's condition, is countably additive on $E$, in other words, $m$ is countably additive on Lebesgue measurable subsets of R.
+From the preceding propositions, we immediately conclude that the collection of measurable sets is a $\sigma$-algebra. Also, Lebesgue outer measure $m^*$, written as $m$ when restricted to the $\sigma$-algebra $E$ subsets of $R$ satisfying Carathedory's condition, is countably additive on $E$. In other words, $m$ is countably additive on Lebesgue measurable subsets of R.
 \medskip
 
 It can further be shown Intervals satisfy Caratheodory's condition, using the Heine-Borel theorem. But we can use Borel sets to extend our applicability of Lebesgue measure to a much larger group of subsets.
@@ -317,17 +317,17 @@ Therefore, since the measurable sets are a $\sigma$-algebra containing all open 
     \item All intervals
 \end{itemize}
 
-Every Borel set is Lebesgue measurable, but not vice-versa, there exist sets that are Lebesgue measurable which are not Borel sets.
+Every Borel set is Lebesgue measurable, but not vice-versa. There exist sets that are Lebesgue measurable, which are not Borel sets.
 %add examples here
 The collection of all Lebesgue measurable sets is a $\sigma$-algebra $\mathscr{M}$, and $\mathscr{B}$, the collection of Borel sets, then
 $$\mathscr{B} \subset \mathscr{M} \subset 2^{\mathbb{R}} $$
 \newpage
 \section{Lebesgue Measure}
 
-By restricting outer measure of to a class of measurable sets, we can define the Lebesgue measure. It is denoted by $m$, if E is a measurable set, it's Lebesgue measure is defined to be
+By restricting outer measure to a class of measurable sets, we can define the Lebesgue measure. It is denoted by $m$. If E is a measurable set, its Lebesgue measure is defined to be
 $$m(E)=m^*(E)$$
 
-We can use all our previous results to determine the Lebesgue measure of specific sets of real numbers, note that all following sets are presumed to be Lebesgue measurable sets of real numbers.
+We can use all our previous results to determine the Lebesgue measure of specific sets of real numbers. Note that all following sets are presumed to be Lebesgue measurable sets of real numbers.
 
 We can infer the following properties for Lebesgue measurable sets-
 
@@ -407,7 +407,7 @@ $$m^*(B)=m^*(B \cap A) + m^*(B \cap A^C)= m^*(A)+  m^*(B \sim A).$$
 
 {\large \textbf{Theorem}}
 
-For an arbitrary subset E of $\mathbb{R}$, following assertions are equivalent to measurability of E
+For an arbitrary subset E of $\mathbb{R}$, the following assertions are equivalent to the measurability of E
 
 \begin{enumerate}
 
@@ -418,11 +418,11 @@ For an arbitrary subset E of $\mathbb{R}$, following assertions are equivalent t
     \item There is a $F_{\sigma}$ set $F$ contained in $E$ for which $m*(E \sim F) =0$. 
 \end{enumerate}
 
-Here, $G_{\delta}$ denotes a subset that is a countable intersection of open sets and $F_{\sigma}$ is a countable union of closed sets.
+Here, $G_{\delta}$ denotes a subset that is a countable intersection of open sets, and $F_{\sigma}$ is a countable union of closed sets.
 
 \subsection{Extension to $\mathbb{R}^n$}
 
-The modern construction of Lebesgue Measure is an application of 
+The modern construction of the Lebesgue Measure is an application of 
 Caratheodory's extension theorem (not discussed here).
 
 Fix $n \in \mathbb{N}$. A $box$ is a set of the form:
@@ -439,20 +439,20 @@ These Lebesgue measurable sets form a $\sigma$-algebra, and the Lebesgue measure
 \end{itemize}
 
 \subsection{Banach-Tarski Paradox}
-Banach-Tarski paradox is a famous example to be demonstrated here, the Banach-Tarski theorem tells us that given a sphere in 3-dimensional space, there exists a decomposition of the ball into a number of finite number of disjoint subsets, which can be put back in a different way to yield two identical copies of the original sphere. This can be done using as few as 5 pieces.\medskip
+Banach-Tarski paradox is a famous example to be demonstrated here. The Banach-Tarski theorem tells us that given a sphere in 3-dimensional space, there exists a decomposition of the ball into a number of finite number of disjoint subsets, which can be put back in a different way to yield two identical copies of the original sphere. This can be done using as few as 5 pieces.\medskip
 
 The reason this theorem is called a paradox is that it contradicts our intuition about volume.
 
-While the reassembly process involves only moving the pieces around and rotating them without changing their shape which are closed under the Lebesgue measure, some of the five or more sets in which you divide the sphere are not Lebesgue measurable.
+While the reassembly process involves only moving the pieces around and rotating them without changing their shape, which is closed under the Lebesgue measure, some of the five or more sets in which you divide the sphere are not Lebesgue measurable.
 
 Unlike most theorems in geometry, the proof for the Banach-Tarski theorem itself requires using the axiom of choice, which allows the construction of non-measurable sets.\medskip
 
-As some of the sets are non-measurable, it's not possible to define a volume to such sets as seen before. It is therefore absurd to add these 'volumes' in order to double their initial volume. However, note that the initial sphere and the final spheres obtained are measurable.
+As some of the sets are non-measurable, it's not possible to define a volume to such sets as seen before. It is, therefore, absurd to add these 'volumes' in order to double their initial volume. However, note that the initial sphere and the final spheres obtained are measurable.
 \newpage
 \section{Probability and Measures}
 
 
-We'll start from the very basics of the probability theory and work our ways up to learn more complex concepts and the involvement of Measure theory in probability.
+We'll start from the very basics of probability theory and work our way up to learn more complex concepts and the involvement of Measure theory in probability.
 
 \subsection{Random Experiment}
 
@@ -460,7 +460,7 @@ An experiment whose outcome cannot be predicted with certainty even if the exper
 
 \subsection{Sample Space ($\Omega$)}
     
-It's defined as the set of all possible outcomes of an experiment.
+The sample space is defined as the set of all possible outcomes of an experiment.
 
 For example:
 \begin{enumerate}
@@ -469,33 +469,33 @@ For example:
 \end{enumerate}
 
 
-In probability theory, an outcome is denoted by $\omega$ and from the definition of the sample space we can say that $\omega$ $\in$ $\Omega$.
+In probability theory, an outcome is denoted by $\omega$, and from the definition of the sample space, we can say that $\omega$ $\in$ $\Omega$.
 So an outcome is nothing but an element of the sample space.
 
-Observe that in probability outcome is the source of randomness and is not of our control in a random experiment.
+Observe that in probability, the outcome is the source of randomness and is not in our control in a random experiment.
 \bigskip
 
-NOTE - The sample space of an experiment can be countable or uncountable. The sample space of an experiment like tossing a coin n times is countable with 2$^{n}$ outcomes whereas if we want to determine the speed with which the coin tossed would land back is a set of positive real numbers and the sample space would be uncountable. Another example of uncountable sample space could be the set of all points on the circumference of a circle.\bigskip
+NOTE - The sample space of an experiment can be countable or uncountable. The sample space of an experiment like tossing a coin n times is countable with 2$^{n}$ outcomes, whereas if we want to determine the speed with which the coin tossed would land back is a set of positive real numbers, and the sample space would be uncountable. Another example of uncountable sample space could be the set of all points on the circumference of a circle.\bigskip
 
-One more thing to discuss before going ahead is that often while discussing probability theory, we are not interested in a particular outcome but a subset of the sample space. For example - when a dice is rolled, we might be interested if the outcome is an even number $\{2,4,6\}$ or a prime number $\{2,3,5\}$ rather than the outcome being a particular number like 2 or 5.
+One more thing to discuss before going ahead is that we are often not interested in a particular outcome but a subset of the sample space while discussing probability theory. For example - when a dice is rolled, we might be interested if the outcome is an even number $\{2,4,6\}$ or a prime number $\{2,3,5\}$ rather than the outcome being a particular number like 2 or 5.
 
 \subsection{Events and event space}
-The subset of the sample space $\Omega$ which is of our interest is referred to as an event. The subset is referred to as an event space.
-We understand by taking an example of coin tossed thrice and our outcome being at least 2 tails, so our event space is $\{TTH, HTT, THT, TTT\}$ which as we stated is a subset of a sample space. 
+The subset of the sample space $\Omega$, which is of our interest, is referred to as an event. The subset is referred to as an event space.
+We understand by taking an example of a coin tossed thrice and our outcome being at least 2 tails, so our event space is $\{TTH, HTT, THT, TTT\}$ which, as we stated, is a subset of a sample space. 
 
 We say that an event $E$ $\subseteq$ $\Omega$ has occurred or taken place iff $\omega$ $\in$ $E$.
 
 \subsection{Algebra and probability theory}
 
-Now, before writing down everything mathematically, lets discuss how we are going to link the two concepts.
+Now, before writing down everything mathematically, let's discuss how we will link the two concepts.
 
-If we say that an event $E$ is in our interest we can always say that the non-occurrence of $E$ would also interest us. Thus $E^{c}$, that is the complement of $E$ also would interest us.
+If we say that an event $E$ is in our interest, we can always say that the non-occurrence of $E$ would also interest us. Thus $E^{c}$, that is the complement of $E$, also would interest us.
 
 If two events $M$ and $N$ are of our interest, then the event $M\cup N$ is also of our interest as  $M\cup N$ will have our favourable outcome.
 
-Also when any outcome is obtained, the $\Omega$ has always occurred and thus always interests us.
+Also, when any outcome is obtained, $\Omega$ has always occurred and always interests us.
 
-An algebra as we have stated earlier, it is a collection of subsets of $\Omega$ with certain properties as we have already discussed.
+As we have stated earlier, an algebra is a collection of subsets of $\Omega$ with certain properties, as we have already discussed.
 
 Now we are sufficiently equipped to expand our ideas of algebra to probability.
 
@@ -503,7 +503,7 @@ We denote the sample space by $\Omega$, the $\sigma$-algebra(the collection of s
 
 \subsection{Measurable space}
 ($\Omega$, $\Sigma$) is referred to as a measurable space.
-Probability is a special case of Measure theory and we'll see how.
+Probability is a special case of Measure theory, and we'll see how.
 \bigskip
 
 Measure is a function $\mu$ : $\Sigma$ $\rightarrow$ [0, $\infty$], such that
@@ -615,12 +615,12 @@ If our event had been getting a prime number (2 or 3 or 5), our event space woul
 \newpage
 \section{Lebesgue Integration}
 
-The Lebesgue integral is a powerful tool, and is a further extension of the Lebesgue measure, which can be used to integrate more functions when compared to the Riemann integral or even the Riemann–Stieltjes integral. 
+The Lebesgue integral is a powerful tool and a further extension of the Lebesgue measure, which can be used to integrate more functions compared to the Riemann integral or even the Riemann–Stieltjes integral. 
 This integral plays an important role in probability theory.
 
-The Lebesgue integral approximates the area under a curve using horizontal strips, or using the measure of an interval whereas the Riemann integral uses vertical strips.
+The Lebesgue integral approximates the area under a curve using horizontal strips or using the measure of an interval, whereas the Riemann integral uses vertical strips.
 
-This topic will not be covered in full, as it requires a deeper discussion into Measurable functions and sequences of functions, but we can see some applications of the integral.
+This topic will not be covered in full, as it requires a more profound discussion into Measurable functions and sequences of functions, but we can see some applications of the integral.
 
 \subsection{Explanation}
 
@@ -628,7 +628,7 @@ This topic will not be covered in full, as it requires a deeper discussion into 
     "I have to pay a certain sum, which I have collected in my pocket. I take the bills and coins out of my pocket and give them to the creditor in the order I find them until I have reached the total sum. This is the Riemann integral. But I can proceed differently. After I have taken all the money out of my pocket I order the bills and coins according to identical values and then I pay the several heaps one after the other to the creditor. This is my integral."
 \end{center}
 
-This explanation was given by Henri Lebesgue himself, it is futile to attempt for a better one.
+This explanation was given by Henri Lebesgue himself, and it is futile to attempt for a better one.
 
 \subsection{Simple Functions}
 As the name suggests, a simple function is a function that takes on only finitely many distinct values. 
@@ -687,7 +687,7 @@ The Dirichlet function,
     0 , x \;is\; not\; rational
    \end{cases}
 \]
- It is nowhere continuous, and not Riemann-integrable.\medskip
+ It is nowhere continuous and not Riemann-integrable.\medskip
  
  The Dirichlet function is Lebesgue-integrable on $\mathbb{R}$ and its integral over $\mathbb{R}$ is zero, as the measure of rational numbers is 0.
 
