@@ -379,13 +379,17 @@ Which is not possible, as $\lim_{n \rightarrow \infty} n m(A)$ can take only one
 	\item Consider an interval $[2, 5]$ on $\mathbb{R}$. Then, the Lebesgue measure of the interval $m([2, 5]$ is given by $l([2, 5]) = 5 - 2 = 3$. Note that the Lebesgue measures of $(2, 5)$, $(2, 5]$ and $[2, 5)$ are also 3.
 	\item The set of all rational numbers given by $\mathbb{Q}$ has Lebesgue measure equal to zero.
 	\item The set $\{1, 2, 3, 4\}$ has Lebesgue measure equal to zero.
-	\item The Cantor ternary set is an example of an uncountable set that has Lebesgue measure equal to 0. The cantor ternary set $\mathcal{C}$ is given by
-	$$\mathcal{C} = \bigcap\limits_{n=1}^\infty C_n$$
-	where
-	$$C_n = \frac{C_{n-1}}{3} \cup ( \frac{2}{3} + \frac{C_{n-1}}{3} ) \  \forall\ n \geq 1 \ and\ C_0 =  [0, 1]$$
 	\item Vitali sets are \textbf{not} Lebesgue measurable (see the proof of existence of non-measurable sets given previously in Sec.5.2).
 \end{itemize}
 
+\subsection{Cantor Set}
+The Cantor ternary set is an example of an uncountable set that has Lebesgue measure equal to 0. The cantor ternary set $\mathcal{C}$ is given by
+	$$\mathcal{C} = \bigcap\limits_{n=1}^\infty C_n$$
+	where
+	$$C_n = \frac{C_{n-1}}{3} \cup ( \frac{2}{3} + \frac{C_{n-1}}{3} ) \  \forall\ n \geq 1 \ and\ C_0 =  [0, 1]$$
+	Note that while building the Cantor set, we remove $\frac{1}{3}$ of each interval, meaning at step $n-1$ we remove $(\frac{1}{3})^n$, $2^{n-1}$ times, so we remove a total of
+	$$ \sum_{n=1}^{\infty} \frac{2^{n-1}}{3^n}=\frac{1}{3}\sum_{n=1}^{\infty} (\frac{2}{3})^n=\frac{1}{3}\times \frac{1}{1-\frac{2}{3}}=1$$
+	As the length of the interval removed is equal to the initial measure of [0,1], Lebesgue measure of the Cantor Set is equal to 0.
 \subsection{Outer and Inner approximation of Lebesgue measure}
 
 Measurable sets possess the following excision property: If A is a measurable set of finite outer measure that is contained in B, then
@@ -692,6 +696,6 @@ The Dirichlet function,
     \item \href{https://en.wikipedia.org/wiki/Lebesgue_integration}{Lebesgue Integration}
     
 \end{itemize}
-Wikipedia and Math Stack Exchange were often used  as a reference, but not as a source in this project.
+Wikipedia and Math Stack Exchange were often used as a reference, but not as a source in this project.
 
 \end{document}
