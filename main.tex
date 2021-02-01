@@ -135,6 +135,7 @@ Using 2.5:
 $$  l(I) \leq 4\epsilon +  \sum l(I_k)$$
 
 As this holds for any $\epsilon$, $l(I) \leq \sum l(I_k)$, the proof is complete.
+\newpage
 \section{Lebesgue Outer Measure}
 
 We have seen that every set of real numbers can be covered with a countable collection of open intervals.
@@ -207,10 +208,17 @@ Since this holds for each $\epsilon>0$, it also holds for $\epsilon=0$. The proo
 
 The finite sub-additivity property follows from countable sub-additivity by taking $E_k = \phi$ for $k>n$.
 
+\subsection{Countable Sets have outer measure zero}
+Let C be a  countable set enumerated as $C=\{c_k\}_{k=1}^\infty$. Let $\epsilon>0.$ For each natural number k, define $I_k=(c_k-{\frac{\epsilon}{2^{k+1}}},c_k+{\frac{\epsilon}{2^{k+1}}}).$ The countable collection of open intervals $\{I_k\}_{k=1}^\infty$ covers C. Therefore
+
+$$ 0 \leq m^*(C) \leq \sum_{k=1}^{\infty}l(I_k) = \sum_{k=1}^{\infty} \frac{\epsilon}{2^k}= \epsilon$$
+
+This inequality holds for all $\epsilon>0$. Hence $m^*(C)=0$.
+
 \subsubsection{$[0,1]$ is not countable}
 
-As seen in Sec.3.3 $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0, (refer to Royden and Fitzpatrick pg.31), therefore $[0,1]$ is not countable.
-
+As seen in Sec.3.3 $[0,1]$ has an outer measure of 1, whereas all countable sets have a measure 0, therefore $[0,1]$ is not countable.
+\newpage
 \section{$\sigma$-Algebra of Lebesgue Measurable sets}
 
 Unfortunately the outer measure fails to be countably additive on all subsets of $\mathbb{R}$, it is not even finitely additive. A famous example is the Vitali Set, found by Giuseppe Vitali in 1905 (Refer to Sec. result 2 of 3.2 \& 5.3).\smallskip
@@ -305,7 +313,7 @@ Every Borel set is Lebesgue measurable, but not vice-versa, there exist sets tha
 %add examples here
 The collection of all Lebesgue measurable sets is a $\sigma$-algebra $\mathscr{M}$, and $\mathscr{B}$, the collection of Borel sets, then
 $$\mathscr{B} \subset \mathscr{M} \subset 2^{\mathbb{R}} $$
-
+\newpage
 \section{Lebesgue Measure}
 
 By restricting outer measure of to a class of measurable sets, we can define the Lebesgue measure. It is denoted by $m$, if E is a measurable set, it's Lebesgue measure is defined to be
@@ -428,7 +436,7 @@ While the reassembly process involves only moving the pieces around and rotating
 Unlike most theorems in geometry, the proof for the Banach-Tarski theorem itself requires using the axiom of choice, which allows the construction of non-measurable sets.\medskip
 
 As some of the sets are non-measurable, it's not possible to define a volume to such sets as seen before. It is therefore absurd to add these 'volumes' in order to double their initial volume. However, note that the initial sphere and the final spheres obtained are measurable.
-
+\newpage
 \section{Probability and Measures}
 
 
@@ -579,7 +587,7 @@ So, in probability, $\Sigma$ -measurable sets are called events.
 	
 
 \end{enumerate}
-
+\newpage
 \section{Lebesgue Integration}
 
 The Lebesgue integral is a powerful tool, and is a further extension of the Lebesgue measure, which can be used to integrate more functions when compared to the Riemann integral or even the Riemann–Stieltjes integral. 
