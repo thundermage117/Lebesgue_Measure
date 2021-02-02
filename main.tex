@@ -202,7 +202,7 @@ We could show that the Jordan outer measure of $ \mathbb{Q} \cap[0,1]$ is 1 even
 \subsection{Outer Measure of any interval is its length}
 
 Proof:  
-For a closed interval [a,b], let $\epsilon >0$. Then $(a-\epsilon,b+\epsilon)$ covers $[a,b]$ and length of this interval is $b-a+\epsilon$. Since $\epsilon$ is arbitrary $m^*([a,b]) \leq b-a = l([a,b])$.\medskip
+For a closed interval [a,b], let $\epsilon >0$. Then $(a-\epsilon,b+\epsilon)$ covers $[a,b]$ and length of this interval is $b-a+2\epsilon$. Since $\epsilon$ is arbitrary $m^*([a,b]) \leq b-a = l([a,b])$.\medskip
 
 Next let ${I_n}$ be a covering of [a,b] by bounded open intervals. By the Heine-Borel Theorem, there exists a finite subset A of $I_n$'s covering [a,b]. So $a \in I_1$ for some $I_1 =(a_1,b_1) \in A$. Also, if $b_1 \leq b$, then $b_1 \in I_2 $ for some $I_2 =(a_2,b_2) \in A$. Similarly we can construct $I_1,I_2,\dots,I_k$. Then
 $$ \sum l(I_n) \geq \sum_{i=1}^k l(I_i) = \sum_{i=1}^{k}(b_i - a_i)$$
@@ -215,14 +215,25 @@ If I is an unbounded interval, then given any natural number $n \in N$, there is
 \subsection{Outer Measure is translation invariant}
 $$m^*(A)=m^*(A+y)$$
 
-Proof: Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover A. And from Sec 2.5 $\sum l(I_n) < M+ \epsilon$, so if $y \in \mathbb{R}$, then ${I_{n}+y}$ is a covering of A+y and so $m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$ .Therefore $m^*(A+y) \leq M$.\medskip
+\textbf{Proof: }Suppose $m^*(A) = M < \infty$. Then for all $\epsilon > 0 $ there exist ${I_n}$ bounded open intervals, such that they cover $A$. And from Sec 2.5 
+$$\sum l(I_n) < M + \epsilon$$
+So if $y \in \mathbb{R}$, then ${I_{n}+y}$ is a covering of $A + y$ and so 
+$$m^{*}(A+y) \leq \sum l(I_n + y ) = \sum l(I_n) < M + \epsilon$$
+Therefore $m^*(A+y) \leq M$.
 
-Now, let ${J_n}$ be a collection of bounded open intervals such that $\cup J_n \supset A+y $.Assume that $\sum l(J_n)< M$. Then ${J_n-y}$ is a covering of A and $\sum l(J_n-y)=\sum l(J_n) < M$, a contradiction. So, $\sum l(J_n) \geq M$ and hence $m^*(A)\geq M$. So $m^*(A)=m^*(A+y)=M$.\medskip
+\medskip
 
-Suppose $m^*(A)= \infty$.Then for any$\{I_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A \subset \cup I_n$, we must
-have$\sum l(I_n) =\infty$. Consider A+y. For any $\{J_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A+y \subset \cup J_n$, the collection $\{J_n - y\}_{n=1}^{\infty} $ is a set of bounded open intervals such that $A+y \subset \cup J_n -y$. \smallskip
+Now, let ${J_n}$ be a collection of bounded open intervals such that $(\cup J_n) \supset A+y $. Assume that $\sum l(J_n)< M$. Then ${J_n-y}$ is a covering of $A$ and 
+$$\sum l(J_n-y)=\sum l(J_n) < M, \ \mathrm{a \ contradiction}$$ 
+So, $\sum l(J_n) \geq M$ and hence $m^*(A)\geq M$. So $m^*(A)=m^*(A+y)=M$.
 
-So $\sum l(J_n - y) =\infty$. But l($J_n$) =l($J_n - y$), so we must have $\sum l(J_n) =\infty$. Since $\{J_n\}_{n=1}^{\infty} $ is an arbitrary collection of bounded open intervals covering A+y, we must have $m^*(A)=m^*(A+y)= \infty$. 
+\medskip
+
+Suppose $m^*(A)= \infty$. Then for any$\{I_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A \subset (\cup I_n)$, we must have 
+$$\sum l(I_n) =\infty$$
+ Consider $A+y$. For any $\{J_n\}_{n=1}^{\infty} $ a set of bounded open intervals such that $A+y \subset (\cup J_n)$, the collection $\{J_n - y\}_{n=1}^{\infty} $ is a set of bounded open intervals such that $A+y \subset (\cup( J_n -y))$. So $\sum l(J_n - y) =\infty$. But $l(J_n) = l(J_n - y)$, so we must have 
+$$\sum l(J_n) =\infty$$
+Since $\{J_n\}_{n=1}^{\infty} $ is an arbitrary collection of bounded open intervals covering $A+y$, we must have $m^*(A)=m^*(A+y)= \infty$. 
 
 \subsection{Outer Measure is countably sub-additive}
 
@@ -369,12 +380,12 @@ We can infer the following properties for Lebesgue measurable sets-
     \item $m(\bigcup \limits_{i=1}^\infty A_i)$ = $\sum \limits_{i=1}^\infty m(A_i)$ for $A_i \cap A_j = \phi$ for $i \neq j$ for all $A_i$ $\in$ $\Sigma$, a $\sigma$-algebra ($\sigma$-additivity).
     \item $m(E_1 \cup E_2) + m(E_1 \cap E_2) = m(E_1)+ m(E_2)$.
     \item If $E_1$, $E_2$, $E_3$,.... $E_n$ are measurable, then $\bigcup\limits_{i=1}^{n}E_i$ and $\bigcap\limits_{i=1}^{n}E_i$ are measurable.
-    \item $m(E_1) \leq m(E_2)\, if \, E_1 \subset E_2$. If in addition, $m(E_2) <\infty$, then $m(E_2)-m(E_1)=m(E_2-E_1)$.
+    \item $m(E_1) \leq m(E_2)$, if $E_1 \subset E_2$. If in addition, $m(E_2) <\infty$, then $m(E_2)-m(E_1)=m(E_2-E_1)$.
     \item If $E_1 \subset E_2 \subset E_3 \dots$ then $m(\cup E_k)=m(\lim E_k)=\lim m(E_k)$
     \item If $E_1 \supset E_2 \supset E_3 \dots$ and $m(E_1) < \infty $, then $m(\cap     E_k)=m(\lim E_k)=\lim m(E_k)$
-    \item If $m(\cup E_k) < \infty$, then $\lim sup\, m(E_k) \leq m(\lim sup E_k)$
-    \item  $ m(\lim inf E_k) \leq \lim inf\, m(E_k) $
-    \item If $\lim inf E_k = \lim sup E_k$ and $m(\cup E_k)<\infty$, then $m(\lim E_k)=\lim m(E_k)$
+    \item If $m(\cup E_k) < \infty$, then $\limsup\, m(E_k) \leq m(\limsup E_k)$
+    \item  $ m(\liminf E_k) \leq \liminf\, m(E_k) $
+    \item If $\liminf E_k = \limsup E_k$ and $m(\cup E_k)<\infty$, then $m(\lim E_k)=\lim m(E_k)$
 \end{enumerate}
 
 
@@ -429,9 +440,9 @@ The Cantor ternary set is an example of an uncountable set that has Lebesgue mea
 \subsection{Outer and Inner approximation of Lebesgue measure}
 
 Measurable sets possess the following excision property: If A is a measurable set of finite outer measure that is contained in B, then
-$$ m^*(B \sim A)= m^*(B)-m^*(A).$$
+$$ m^*(B \setminus A)= m^*(B)-m^*(A).$$
 This follows from Sec 4.1
-$$m^*(B)=m^*(B \cap A) + m^*(B \cap A^C)= m^*(A)+  m^*(B \sim A).$$
+$$m^*(B)=m^*(B \cap A) + m^*(B \cap A^C)= m^*(A)+  m^*(B \setminus A).$$
 
 {\large \textbf{Theorem}}
 
@@ -439,11 +450,11 @@ For an arbitrary subset E of $\mathbb{R}$, the following assertions are equivale
 
 \begin{enumerate}
 
-    \item For each $\epsilon >0$, there is an open set $O$ containing E for which $m^{*}(O \sim E)<\epsilon$.(Outer approximation by open sets)
-    \item There is a $G_{\delta}$ set $G$ containing $E$ for which $m*(G \sim E) =0$. 
+    \item For each $\epsilon >0$, there is an open set $O$ containing E for which $m^{*}(O \setminus E)<\epsilon$ (Outer approximation by open sets).
+    \item There is a $G_{\delta}$ set $G$ containing $E$ for which $m*(G \setminus E) =0$. 
     
-    \item For each $\epsilon >0$, there is an closed set $F$ contained in $E$ for which $m^{*}(E \sim F)<\epsilon$.(Inner approximation by closed sets)
-    \item There is a $F_{\sigma}$ set $F$ contained in $E$ for which $m*(E \sim F) =0$. 
+    \item For each $\epsilon >0$, there is an closed set $F$ contained in $E$ for which $m^{*}(E \setminus F)<\epsilon$ (Inner approximation by closed sets).
+    \item There is a $F_{\sigma}$ set $F$ contained in $E$ for which $m*(E \setminus F) =0$. 
 \end{enumerate}
 
 Here, $G_{\delta}$ denotes a subset that is a countable intersection of open sets, and $F_{\sigma}$ is a countable union of closed sets.
