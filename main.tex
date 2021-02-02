@@ -9,7 +9,7 @@
 \centering
 \vfill
 \includegraphics{iiit}
-\vskip2cm
+\vskip1cm
 
 {\bfseries\Large
 		International Institute of Information Technology, Hyderabad\\
@@ -63,13 +63,13 @@ We have no words to express our thanks for the valuable support and guidance we 
 
 This report introduces the concept of Measure Theory, Lebesgue measure, and its applications in the field of probability.\bigskip
 
-We shall build our Lebesgue Measure from the ground up intuitively. While this paper is not a detailed discussion on the topic, we will use known concepts where required to retain the readers' interest.\bigskip
+We shall build our Lebesgue measure from the ground up intuitively. This paper is not a detailed presentation on the topic, only the most fundamental concepts will be discussed, we will use known concepts where required to retain the readers' interest.\bigskip
 
-The report opens up with the discussion on Measure and its properties. They are followed by short sections about some fundamental theorem and outer measures.\bigskip
+The report opens up with the discussion on measure and its properties. They are followed by short sections about some fundamental theorem and outer measures.\bigskip
 
 Next, we establish the concepts of algebras, $\sigma$-algebras, Borel sets along with an in-depth analysis of the Lebesgue measure. The reader will have an excellent understanding using the various examples that have been provided.\bigskip
 
-Next in the report, we will come across the application of the Lebesgue measure in Probability. A small section on Lebesgue integrals has also been included to pique the reader's interest. We advance through the topic using basic definitions we have learned and some new ones we will learn as we go through the concepts.
+Later we will come across the application of the Lebesgue measure in probability. A small section on Lebesgue integrals has also been included to pique the reader's interest. We advance through the topic using basic definitions we have learned and some new ones we will learn as we go through the concepts.
 \newpage
 
 \begin{center}
@@ -99,21 +99,23 @@ In this report, we will be dealing with Lebesgue measures mainly, the notion of 
 
 \bigskip
 
-Probability theory as the name suggests, deals with the study of probability, the measure of likelihood of an event in an experiment. It could be as simple as choosing a card from a deck of cards to more complex fields, like Physics (for example, quantum mechanics) , Biology and Finance. Probability theory often uses a notion called a probability measure, which is also covered in this report.
-
+Probability theory as the name suggests, deals with the study of probability, the measure of likelihood of an event in an experiment. It could be as simple as choosing a card from a deck of cards to more complex fields, like physics (for example, quantum mechanics), biology and finance. Probability theory often uses a notion called a probability measure, which is also covered in this report.
 
 \newpage
+
 \section{Measure}
 
-How do we measure a set or an object? If we have a 3-dimensional object, we could find its volume in 2 different ways, we could fill the container with simple objects or $boxes$ and find their sum, or we could encase the whole container in a box and start chipping away smaller boxes. These approaches work only when our box measure is a properly defined measure.\medskip
+Measuring a set has been a primary interest of mathematicians for a long time. But how do we measure a set or an object? 
 
-The mathematical concept of measure is a generalisation of length in $\mathbb{R}$, area in $\mathbb{R}^2$ or volume in $\mathbb{R}^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $\mathbb{R}^n$ we are using and $E \subset \mathbb{R}^n$.\medskip
+If we have a 3-dimensional object, we could find its volume in 2 different ways, we could fill the container with simple objects or $boxes$ and find their sum, or we could encase the whole container in a box and start chipping away smaller boxes. These approaches work only when our box measure is a properly defined measure.\medskip
+
+The mathematical concept of measure is a generalisation of length in $\mathbb{R}$, area in $\mathbb{R}^2$ or volume in $\mathbb{R}^3$. To avoid splitting into cases depending on the dimension, we shall refer to the $measure$ of E, depending on what Euclidean space $\mathbb{R}^n$ we are using and $E$ is a subset of $\mathbb{R}^n$.\medskip
 
 We know the measure or length of an interval, say $[0,1]$, we also have $(0,1)$ and $(0,1]$, as these are subsets of our initial interval, their measures must not exceed that of $[0,1]$ (monotonic). Let us assume the length of this unit interval be 1. We let the measure be zero, for a single point or an empty set, and infinite if we consider the real line. Ideally, we'd like to associate a non-negative measure $m(E)$ to every subset E of $\mathbb{R}^n$. It should also obey some reasonable properties like $m(A \cup B) = m(A) + m(B)$ whenever A and B are disjoint, we should have $m(A) \leq m(B)$ whenever $A \subset B$, and $m(x+A)=m(A)$ (translation invariant).\medskip
 
 Here, we hit a roadblock in our definition of a measure. From our definition, we can see that two sets having the same number of points need not have the same measure, let $A=[0,1]$ and $B=[0,2]$, there exists a bijection from A to B (x $\mapsto$ 2x), but B is twice as long as A. Also, if we consider the measure of a point to be zero, it is logical that a collection of points must measure zero, and therefore, all sets must have a zero measure.\medskip
  
- Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact because it is counter-intuitive. These examples tell us that it is impossible to measure every subset of $\mathbb{R}^n$ applying all the above properties.\medskip
+ Remarkably, it turns out such a measure $does \, not \,exist$. This is quite a surprising fact because it is counter-intuitive. These examples tell us that it is impossible to measure \textbf{every} subset of $\mathbb{R}^n$ applying \textbf{all} the above properties.\medskip
  
  If we are developing a measure $m$ defined on the subsets of $\mathbb{R}$, we hope that these conditions are met:
  \begin{enumerate}
@@ -170,12 +172,12 @@ As this holds for any $\epsilon$, $l(I) \leq \sum l(I_k)$, the proof is complete
 \newpage
 \section{Lebesgue Outer Measure}
 
-We have seen that every set of real numbers can be covered with a countable collection of open intervals.
+We have seen that every set of real numbers can be covered with a countable collection of open intervals. The outer measure is attempting to approximate the measure from outside using open sets.
 
 \subsection{Definition}
 
 A is any subset of $\mathbb{R}$. Form the collection of all countable covers of A by open intervals. The Lebesgue outer measure of A, $m^*(A)$, is given by
-$$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \, , \; I_k \; open \; intervals\Big\}$$
+$$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k): A \subset \bigcup_{1}^{\infty} I_k \, , \; I_k \; open \; intervals\Big\}$$
 
 \subsection{Results}
 \begin{enumerate}
@@ -195,7 +197,7 @@ $$m^*(A)= inf\Big\{\sum_{1}^{\infty}l(I_k)| A \subset \bigcup_{1}^{\infty} I_k \
 
 If we had approximated the length of a set A by using covers by finite sets of intervals, then we would have gotten Jordan outer measure instead of the Lebesgue outer measure. 
 
-We could show that the Jordan outer measure of $ \mathbb{Q} \cap[0,1]$ is 1 even though the Jordan outer measure of any point, or any finite set of points, is 0. Therefore it isn't countably sub-additive, more importantly not defined for many sets, limiting the usage of the Jordan measure.
+We could show that the Jordan outer measure of $ \mathbb{Q} \cap[0,1]$ is 1 even though the Jordan outer measure of any point, or any finite set of points, is 0. Therefore it isn't countably sub-additive, more importantly not defined for many sets, limiting the further usage of the Jordan measure.
 
 \subsection{Outer Measure of any interval is its length}
 
@@ -257,7 +259,9 @@ Unfortunately, the outer measure fails to be countably additive on all subsets o
 
 However, we can salvage matters by measuring a particular class of sets in $\mathbb{R}$, hereafter called the measurable sets. Once we restrict ourselves to measurable sets, we recover all the properties again.
 
-\subsection{Carathedory's Measurability Criteria}
+We shall be doing this using Caratheodory's Criterion rather than defining the Lebesgue inner measure (both the definitions are equivalent).
+
+\subsection{Caratheodory's Measurability Criteria}
 
 E is any set of real numbers. If
 
@@ -266,7 +270,7 @@ for every set X of real numbers, then the set E is said to be Lebesgue Measurabl
 
 \subsection{Results}
 \begin{enumerate}
-    \item Any set of outer measure is measurable. In other words, any countable set is measurable.
+    \item Any set of outer measure 0 is measurable. In other words, any countable set is measurable.
     \item The union of a finite collection of measurable sets is measurable. This can be inferred using set identities and finite sub-additivity property of outer measure, then applying induction.
     \item The union of a countable collection of measurable sets is measurable.
 \end{enumerate}
@@ -327,7 +331,7 @@ It can further be shown Intervals satisfy Caratheodory's condition, using the He
 \subsection{Borel Sets}
 The $\sigma$-algebra generated by the collection of all open intervals of R is called the Borel $\sigma$-algebra $\mathscr{B}$.
 
-Therefore, since the measurable sets are a $\sigma$-algebra containing all open sets, every Borel set of real numbers is Lebesgue measurable. $\mathscr{B}$ contains about every set that comes up in analysis.
+Therefore, since the measurable sets are a $\sigma$-algebra containing all open sets, every Borel set of real numbers is Lebesgue measurable. $\mathscr{B}$ contains about every set that usually comes up in analysis.
 
 \subsubsection{Contents of Borel Sets}
 \begin{itemize}
@@ -368,8 +372,8 @@ We can infer the following properties for Lebesgue measurable sets-
     \item $m(E_1) \leq m(E_2)\, if \, E_1 \subset E_2$. If in addition, $m(E_2) <\infty$, then $m(E_2)-m(E_1)=m(E_2-E_1)$.
     \item If $E_1 \subset E_2 \subset E_3 \dots$ then $m(\cup E_k)=m(\lim E_k)=\lim m(E_k)$
     \item If $E_1 \supset E_2 \supset E_3 \dots$ and $m(E_1) < \infty $, then $m(\cap     E_k)=m(\lim E_k)=\lim m(E_k)$
-    \item If $m(\cup E_k) < \infty$, then $\lim sup m(E_k) \leq m(\lim sup E_k)$
-    \item  $ m(\lim inf E_k) \leq \lim inf m(E_k) $
+    \item If $m(\cup E_k) < \infty$, then $\lim sup\, m(E_k) \leq m(\lim sup E_k)$
+    \item  $ m(\lim inf E_k) \leq \lim inf\, m(E_k) $
     \item If $\lim inf E_k = \lim sup E_k$ and $m(\cup E_k)<\infty$, then $m(\lim E_k)=\lim m(E_k)$
 \end{enumerate}
 
@@ -447,7 +451,7 @@ Here, $G_{\delta}$ denotes a subset that is a countable intersection of open set
 \subsection{Extension to $\mathbb{R}^n$}
 
 The modern construction of the Lebesgue Measure is an application of 
-Caratheodory's extension theorem (not discussed here).
+Caratheodory's extension theorem, which was used to prove Caratheodory's criterion.
 
 Fix $n \in \mathbb{N}$. A $box$ is a set of the form:
 $$ B= \prod_{i=1}^{n}[a_i,b_i]$$
@@ -732,7 +736,7 @@ We have seen how probability theory often relies on measure theory, and the noti
 
 \bigskip
 
-The Lebesgue integral opens up many possibilities, many that the Riemann integral cannot. We have seen how the Lebesgue integral is superior when accounting higher dimensions, and the ease in doing so. 
+The Lebesgue integral opens up many possibilities, many that the Riemann integral cannot. We have seen how the Lebesgue measure and hence the integral is superior when accounting higher dimensions, and the ease in doing so. 
 
 
 \newpage
@@ -756,6 +760,5 @@ The Lebesgue integral opens up many possibilities, many that the Riemann integra
     \item \href{https://en.wikipedia.org/wiki/Lebesgue_integration}{Lebesgue Integration}
     
 \end{itemize}
-Wikipedia and Math Stack Exchange were often used as a reference, but not as a source in this project.
 
 \end{document}
